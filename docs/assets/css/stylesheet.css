@@ -2962,4 +2962,5 @@ input:-internal-autofill-selected {
   border: 1px solid #F00;
   padding: 5px;
   margin: 0 5px;
+  display: none;
 }
