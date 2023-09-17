@@ -3,12 +3,15 @@
 
 Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 
+
+
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Joao Paulo Dias Estevão    [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://github.com/joaodest)
+* Caio Carvalho Amorim Nery Assis
+* Victor Souza Lima
+* Bernardo Kartabil
+* Joao Matheus Gomes Sales Barbosa
 
 ## Professores responsáveis
 
