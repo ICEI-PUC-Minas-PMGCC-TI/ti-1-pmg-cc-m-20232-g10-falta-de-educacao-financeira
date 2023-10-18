@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>PROKNOW</title>
 </head>
 
@@ -40,8 +40,8 @@
                     <div class="row g-3 mb-2">
                         <div class="col-sm-6">
                             <label for="salario" class="form-label">Informe suas despesas fixas</label>
-                            <input type="text" class="form-control" id="salario"
-                                placeholder="Insira aqui suas despesas fixas" value="" required>
+                            <input type="text" class="form-control" id="despesas"
+                                placeholder="R$ 0000,00" value="" required>
                             <div class="invalid-feedback">
                                 Por favor, insira suas despezas que são fixas!
                             </div>
@@ -51,8 +51,8 @@
                     <div class="row g-3 mb-2">
                         <div class="col-sm-6"><label for="bonus" class="form-label">Informe suas despesas deste
                                 mes</label>
-                            <input type="text" class="form-control" id="bonus"
-                                placeholder="Insira aqui suas que não são fixas" value="" required>
+                            <input type="text" class="form-control" id="despesa_mes"
+                                placeholder="R$ 0000,00" value="" required>
                             <div class="invalid-feedback">
                                 Por favor, insira suas despezas que não são fixas!
                             </div>
@@ -63,7 +63,7 @@
                     <div class="row g-3 mb-2">
                         <div class="col-sm-6">
                             <label for="salario" class="form-label">Informe quanto gastou com lazer</label>
-                            <input type="text" class="form-control" id="salario" placeholder="Insira aqui suas despesas"
+                            <input type="text" class="form-control" id="lazer" placeholder="R$ 0000,00"
                                 value="" required>
                             <div class="invalid-feedback">
                                 Por favor, insira suas despezas com lazer!
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row g-3 mb-2">
+                <div class="row g-3 mb-2 prosseguir" >
                     <div class="col col-md-6 mb-3">
                         <div class="d-flex flex-column flex-sm-row gap- 2">
                             <button class="btn btn-primary w-100 btn-md" type="submit">Prosseguir</button>
