@@ -12,14 +12,14 @@ async function readIncoming() {
       console.error('Erro ao ler usuarios', error);
       displayMessage("Deu ruim ae paizão");
     })
-    
+
 }
 
 
 
 function registerIncoming(user) {
-  debugger;
 
+  debugger;
   fetch(apiPath, {
     method: 'POST',
     headers: {
@@ -30,7 +30,8 @@ function registerIncoming(user) {
 
     .then(response => response.json())
     .then(data => {
-      console.log('Success:', data);
+      console.log('Success:');
+      console.log(data);
     })
     .catch(error => {
       console.error('Erro ao inserir contato via API', error);
