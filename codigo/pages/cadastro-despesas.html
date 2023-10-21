@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/css/style.css">
+    <link rel="stylesheet" href="../assets/css/stylecrud.css">
     <title>PROKNOW</title>
 </head>
 
@@ -39,8 +39,8 @@
 
                     <div class="row g-3 mb-2">
                         <div class="col-sm-6">
-                            <label for="salario" class="form-label">Informe suas despesas fixas</label>
-                            <input type="text" class="form-control" id="salario"
+                            <label for="expenses" class="form-label">Informe suas despesas fixas</label>
+                            <input type="text" class="form-control" id="fix-expenses"
                                 placeholder="Insira aqui suas despesas fixas" value="" required>
                             <div class="invalid-feedback">
                                 Por favor, insira suas despezas que são fixas!
@@ -49,9 +49,9 @@
                     </div>
 
                     <div class="row g-3 mb-2">
-                        <div class="col-sm-6"><label for="bonus" class="form-label">Informe suas despesas deste
+                        <div class="col-sm-6"><label for="exp" class="form-label">Informe suas despesas deste
                                 mes</label>
-                            <input type="text" class="form-control" id="bonus"
+                            <input type="text" class="form-control" id="unfix-expenses"
                                 placeholder="Insira aqui suas que não são fixas" value="" required>
                             <div class="invalid-feedback">
                                 Por favor, insira suas despezas que não são fixas!
@@ -62,8 +62,8 @@
 
                     <div class="row g-3 mb-2">
                         <div class="col-sm-6">
-                            <label for="salario" class="form-label">Informe quanto gastou com lazer</label>
-                            <input type="text" class="form-control" id="salario" placeholder="Insira aqui suas despesas"
+                            <label for="lazer" class="form-label">Informe quanto gastou com lazer</label>
+                            <input type="text" class="form-control" id="lazer-exp" placeholder="Insira aqui suas despesas"
                                 value="" required>
                             <div class="invalid-feedback">
                                 Por favor, insira suas despezas com lazer!
@@ -96,7 +96,7 @@
 
         </footer>
     </div>
-    <script src="cadastro.js"></script>
+    <script src="../assets/js/cadastro_ganhos.js"></script>
 </body>
 
 
