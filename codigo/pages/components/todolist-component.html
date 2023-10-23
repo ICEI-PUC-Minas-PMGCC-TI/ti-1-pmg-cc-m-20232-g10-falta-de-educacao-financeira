@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container-fluid col-4 py-3">
+    <div class="container-fluid col-lg-6 py-3">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"></h5>
@@ -40,7 +40,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="./todolist-component.html"></script>
+    <script src="/assets/js/component/todolist-component.js"></script>
 </body>
 
 <script>
@@ -68,7 +68,7 @@
 
         displayTasks();
         registerTask(objTask);
-        
+
     });
 
     function displayTasks() {
@@ -82,11 +82,15 @@
             }
 
             listItem.id = `task-${task.id}`;
-            listItem.innerHTML = `<span class="g-3">${task.task}</span>
+            listItem.innerHTML = `<span>${task.task}</span>
             <hr>
             <div>
                 <button class="btn btn-success btn-sm w-100" onclick="toggleDone(${task.id})" style="height: 2rem; width= 12rem;">Marcar como feita</button>
-           </div>`
+           </div>
+           <div>
+                <button class="btn btn-danger btn-sm w-100" onclick="deleteTask(${task.id})" style="height: 2rem; width= 12rem;">Deletar tarefa</button>
+           </div>
+           `
 
             todoList.appendChild(listItem);
         });
@@ -99,8 +103,8 @@
         }
     }
     function deleteTask(id) {
-        const task = tasks.filter(task => task.id !== id);
-
+        tasks = tasks.filter(task => task.id !== id);
+        deleteTask(id);
         displayTasks();
     }
 </script>
