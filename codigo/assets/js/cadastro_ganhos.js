@@ -17,10 +17,8 @@ async function readIncoming() {
 
 
 
-function registerIncoming(user) {
-
-  debugger;
-  fetch(apiPath, {
+function registerIncoming(id, user) {
+  fetch(`${apiPath}/${id}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -58,6 +56,12 @@ function registerIncoming(user) {
 
 }
 
+
+let objTodoList = {
+  title: "Titulo da tarefa",
+  description: "Descrição da tarefa",
+  isDone: true
+}
 
 
 
