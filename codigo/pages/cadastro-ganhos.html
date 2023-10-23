@@ -155,7 +155,7 @@
                     }
 
 
-                    form.classList.add('was-validated')
+                    form.classList.add('was-validated').then()
 
                     const salario = document.getElementById('currency').value; // Valor do campo "salario"
                     const bonus = document.getElementById('bonus').value;
@@ -167,13 +167,6 @@
                     console.log(ativos)
 
                     let objIncoming = {
-                        id: 23445446,
-                        login: "vitin.pikamansa",
-                        senha: "003445",
-                        nome: "vitin",
-                        email: "vitin@gmail.com",
-                        telefone: "(69)69696969",
-                        cidade: "bellory hills",
                         incomings: {
                             salarios: salario,
                             bonus: bonus,
@@ -183,9 +176,6 @@
                     }
 
                     registerIncoming(objIncoming);
-
-
-
                 }, false)
             })
 
