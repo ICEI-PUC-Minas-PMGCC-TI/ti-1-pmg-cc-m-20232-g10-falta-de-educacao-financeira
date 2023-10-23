@@ -57,12 +57,6 @@ function registerIncoming(id, user) {
 }
 
 
-let objTodoList = {
-  title: "Titulo da tarefa",
-  description: "Descrição da tarefa",
-  isDone: true
-}
-
 
 
 
