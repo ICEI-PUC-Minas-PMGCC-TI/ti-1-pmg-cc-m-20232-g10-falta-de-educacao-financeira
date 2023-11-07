@@ -1,10 +1,10 @@
 const apiPath = 'https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios';
 
 
-async function readIncoming() {
+async function readUsers() {
 
   await fetch(apiPath)
-    .then(response => response.text())
+    .then(response => response.json())
     .then(users => {
       console.log(users);
     })
@@ -17,16 +17,20 @@ async function readIncoming() {
 
 
 
-function registerIncoming(id, user) {
-  fetch(`${apiPath}/${id}`, {
+function registerIncoming(obj) {
+
+  fetch(apiPath, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(user)
+    body: JSON.stringify(jsonBody + obj)
   })
 
-    .then(response => response.json())
+    .then(response => {
+      response.json();
+      console.log(response.json())
+    })
     .then(data => {
       console.log('Success:');
       console.log(data);
@@ -35,26 +39,15 @@ function registerIncoming(id, user) {
       console.error('Erro ao inserir contato via API', error);
 
     })
-
-  function updateIncoming(id, user) {
-    fetch(`${apiPath}/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user)
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success: ', data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      })
-  }
-
-
-
-
 }
+
+
+
+
+
+
+
+
 
 
 

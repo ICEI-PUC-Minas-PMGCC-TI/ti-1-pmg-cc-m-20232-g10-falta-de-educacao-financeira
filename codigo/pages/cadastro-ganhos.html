@@ -155,7 +155,7 @@
                     }
 
 
-                    form.classList.add('was-validated').then()
+                    form.classList.add('was-validated')
 
                     const salario = document.getElementById('currency').value; // Valor do campo "salario"
                     const bonus = document.getElementById('bonus').value;
@@ -166,6 +166,9 @@
                     console.log(invest)
                     console.log(ativos)
 
+                    let jsonBody = data.map(function (user) {
+
+                    })
                     let objIncoming = {
                         incomings: {
                             salarios: salario,
@@ -179,6 +182,44 @@
                 }, false)
             })
 
+        }
+        async function assignIncoming() {
+            try {
+                const response = await fetch(apiPath);
+                const users = await response.json();
+
+                for (const user of users) {
+                    if (!user.incomings) {
+                        user.incoming = {
+                            salarios: salario,
+                            bonus: bonus,
+                            hasInvestments: invest === 'Sim' ? true : false,
+                            ativos: invest === 'Sim' ? ativos : " "
+                        }
+
+                        await updateUser(user);
+                        console.log('Atribuido incoming ao usuario: ', user);
+                        break; 
+                    }
+                }
+            } catch(error) {
+               console.error('Erro ao atribuir incoming ao usuario: ', error);
+            }
+        }
+
+        async function updateUser(user){
+            try{
+                await fetch(apiPath, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(user)
+                });
+                
+            } catch (error){
+                console.error("Erro no update do usuário", error);
+            }
         }
 
         function deleteUser(id) {
