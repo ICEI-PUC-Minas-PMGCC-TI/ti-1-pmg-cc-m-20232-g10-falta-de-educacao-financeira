@@ -5,18 +5,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // Função para buscar os dados da API e definir as alturas das barras roxas
   async function fetchData() {
     try {
+   
       const response = await fetch(apiUrl);
       if (response.ok) {
         const usuarios = await response.json();
 
         // Encontrar o usuário com o ID especificado
-        const usuario = usuarios.find((user) => user.id === 12);
+        const usuario = usuarios.find((user) => user.id === 29);
 
         if (usuario) {
           // Calcular a soma das despesas a partir de despesas, despesasMes e lazer
-          const despesas = parseFloat((usuario.Expenses.despesas || '0,00').replace('R$ ', '').replace(',', '.')) || 0;
-          const despesasMes = parseFloat((usuario.Expenses.despesasMes || '0,00').replace('R$ ', '').replace(',', '.')) || 0;
-          const lazer = parseFloat((usuario.Expenses.lazer || '0,00').replace('R$ ', '').replace(',', '.')) || 0;
+          const despesas = parseFloat((usuario.expenses?.despesas || 'R$ 0,00').replace('R$ ', '').replace(',', '.')) || 0;
+          const despesasMes = parseFloat((usuario.expenses?.despesasMes || 'R$ 0,00').replace('R$ ', '').replace(',', '.')) || 0;
+          const lazer = parseFloat((usuario.expenses?.lazer || 'R$ 0,00').replace('R$ ', '').replace(',', '.')) || 0;
 
           const totalDespesas = despesas + despesasMes + lazer;
 
