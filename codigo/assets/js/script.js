@@ -1,4 +1,4 @@
-import { carouselVideos, Highlights } from './component/videos'
+import { carouselVideos, Highlights } from './component/videos.js'
 import { routes } from './routes.js'
 import { loading } from './loading.js'
 
@@ -19,26 +19,26 @@ divHighlights.innerHTML = await Highlights(jsonHighlights)
 
 
 const owl = $('.owl-carousel').owlCarousel({
-    center:true,
+    center: true,
     loop: true,
     arrows: true,
     dots: true,
     margin: 10,
-    items:4,
-    nav:true,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
+    items: 4,
+    nav: true,
+    responsiveClass: true,
+    responsive: {
+        0: {
+            items: 1,
+            nav: true
         },
-        700:{
-            items:2,
-            nav:true
+        700: {
+            items: 2,
+            nav: true
         },
-        1000:{
-            items:4,
-            nav:true,
+        1000: {
+            items: 4,
+            nav: true,
         }
     }
 })
