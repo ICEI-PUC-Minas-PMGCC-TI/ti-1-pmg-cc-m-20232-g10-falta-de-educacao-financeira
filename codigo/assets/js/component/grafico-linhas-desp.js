@@ -1,63 +1,91 @@
-   // Função para obter um usuário específico pelo ID
-   async function fetchUserById(userId) {
-    debugger
-    const apiUrl = "https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios";
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    const user = data.find(u => u.id === userId);
-    return user;
-}
+document.addEventListener("DOMContentLoaded", function() {
+    // Conhecendo teoricamente o ID do usuário após o login
+    const userId = "24"; // Substitua pelo ID do usuário que você conhece
 
-// Função para criar e renderizar o gráfico
-async function createChart(userId) {
-    const user = await fetchUserById(userId);
+    // Obter dados do servidor JSON
+    fetch("https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios")
+        .then(response => response.json())
+        .then(data => {
+            // Encontrar o usuário desejado pelo ID
+            const user = data.find(user => user.id == userId);
 
-    if (!user) {
-        console.error("Usuário não encontrado.");
-        return;
+            if (user) {
+                // Utilizar o usuário encontrado para criar gráficos
+                const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                const expensesData = getExpensesData(user);
+                const incomingsData = getIncomingsData(user);
+
+                // Criar gráfico de despesas e receitas para o usuário específico
+                var ctxExpensesIncomings = document.getElementById("expensesIncomingsChart");
+                if (ctxExpensesIncomings) {
+                    var expensesIncomingsChart = new Chart(ctxExpensesIncomings, {
+                        type: 'line',
+                        data: {
+                            labels: months,
+                            datasets: [{
+                                label: 'Despesas',
+                                data: expensesData,
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 2,
+                                fill: false
+                            }, {
+                                label: 'Receitas',
+                                data: incomingsData,
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                borderWidth: 2,
+                                fill: false
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        callback: function(value, index, values) {
+                                            return 'R$ ' + value;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    console.error("Elemento canvas não encontrado.");
+                }
+            } else {
+                console.error("Usuário não encontrado com o ID fornecido.");
+            }
+        })
+        .catch(error => {
+            console.error("Erro ao obter os dados JSON:", error);
+        });
+
+    // Função auxiliar para obter dados de despesas
+    function getExpensesData(user) {
+        if (user.expenses) {
+            return [
+                parseFloat(user.expenses.despesas.replace('R$', '').replace(',', '.')),
+                parseFloat(user.expenses.despesasMes.replace('R$', '').replace(',', '.')),
+                parseFloat(user.expenses.lazer.replace('R$', '').replace(',', '.'))
+            ];
+        } else {
+            console.error("Usuário não possui dados de despesas.");
+            return [0, 0, 0];
+        }
     }
 
-    // Organizar os dados para o gráfico
-    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const receitasData = user.incomings ? parseFloat(user.incomings.salario.replace(",", "")) + parseFloat(user.incomings.bonus.replace(",", "")) : 0;
-
-    // Verificar se o usuário possui despesas
-    const despesasData = user.expenses ? parseFloat(user.expenses.despesas.replace(",", "")) : 0;
-
-    // Criar o gráfico
-    const ctx = document.getElementById('myLineChart').getContext('2d');
-    const myLineChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Receitas',
-                    data: Array(12).fill(receitasData),
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 2,
-                    fill: false
-                },
-                {
-                    label: 'Despesas',
-                    data: Array(12).fill(despesasData),
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 2,
-                    fill: false
-                }
-            ]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 5000,
-                    stepSize: 500
-                }
-            }
+    // Função auxiliar para obter dados de receitas
+    function getIncomingsData(user) {
+        if (user.incomings) {
+            return [
+                parseFloat(user.incomings.salario.replace(',', '.')),
+                parseFloat(user.incomings.bonus.replace(',', '.')),
+                parseFloat(user.incomings.ativos.replace(',', '.'))
+            ];
+        } else {
+            console.error("Usuário não possui dados de receitas.");
+            return [0, 0, 0];
         }
-    });
-}
-
-// Chamar a função para criar o gráfico com o ID do usuário desejado (substituir pelo ID real)
-createChart(24); // Exemplo: ID 24
+    }
+});
