@@ -142,15 +142,24 @@
         }
 
         function init() {
+<<<<<<< HEAD
             const forms = document.querySelectorAll('.needs-validation');
 
             // Loop over them and prevent submission
             Array.from(forms).forEach(form => {
 
+=======
+            readIncoming();
+            const forms = document.querySelectorAll('.needs-validation');
+            btnRegistro = document.getElementById('btnRegistro');
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+>>>>>>> salvar-no-db
                 form.addEventListener('submit', event => {
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
+<<<<<<< HEAD
 
                     }
 
@@ -175,14 +184,47 @@
                             bonus: bonus,
                             hasInvestments: invest === 'Sim' ? true : false,
                             ativos: invest === 'Sim' ? ativos : " "
+=======
+                    }
+
+
+
+                    const salario = document.getElementById('currency').value; // Valor do campo "salario"
+                    const bonus = document.getElementById('bonus').value;
+                    const invest = document.getElementById('ativos') // Valor do campo "bonus"
+                    const ativos = document.getElementById('ganhos').value;
+                    console.log(salario)
+                    console.log(bonus)
+
+                    let objIncoming = {
+                        id: 8,
+                        login: "joao.mateuspiroquinha",
+                        senha: "0009",
+                        nome: "joao matue",
+                        email: "matheussemaga@gmail.com",
+                        telefone: "(69)95323422",
+                        cidade: "Little brumas",
+                        incomings: {
+                            salarios: salario,
+                            bonus: bonus,
+                            hasInvestments: invest == 'Sim' ? true : false,
+                            ativos: invest == 'Sim' ? ativos : " "
+>>>>>>> salvar-no-db
                         }
                     }
 
                     registerIncoming(objIncoming);
+<<<<<<< HEAD
+=======
+
+
+                    form.classList.add('was-validated')
+>>>>>>> salvar-no-db
                 }, false)
             })
 
         }
+<<<<<<< HEAD
         async function assignIncoming() {
             try {
                 const response = await fetch(apiPath);
@@ -221,6 +263,8 @@
                 console.error("Erro no update do usuário", error);
             }
         }
+=======
+>>>>>>> salvar-no-db
 
         function deleteUser(id) {
             fetch(apiPath + 'id', {
