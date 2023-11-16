@@ -5,7 +5,7 @@
     flex: 1 1 auto;
 }
 
-.img-flut{
+.img-flut {
     float: left;
     border: transparent thin solid;
     padding: 5px;
@@ -13,25 +13,27 @@
     max-width: 200px;
 }
 
-.card-link{
+.card-link {
     text-decoration: none;
     color: #57007B;
+
 }
 
-.bg-gray{
+.bg-gray {
     background-color: #EAECEE;
 }
 
-span[aria-label="Previous"],span[aria-label="Next"]{
+span[aria-label="Previous"],
+span[aria-label="Next"] {
     font-size: 3rem !important;
 }
 
-.owl-nav{
+.owl-nav {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-button[role="presentation"]{
+button[role="presentation"] {
     width: 40px;
 }
