@@ -1,4 +1,4 @@
-const apiPath = 'https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios';
+import { apiPath } from "./apiPath";
 
 
 <<<<<<< HEAD
