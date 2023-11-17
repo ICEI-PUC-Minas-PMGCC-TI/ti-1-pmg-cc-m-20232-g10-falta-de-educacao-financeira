@@ -16,7 +16,7 @@ export function cardComments(data){
                         <div class="d-flex flex-row justify-content-between">
                             <div class="d-flex flex-row align-items-center">
                                 <div class="thumbnail-profile">
-                                    <img src="./assets/img/${data.profile}">
+                                    <img src="../../assets/images/${data.profile}">
                                 </div>
                                 <span class="fw-bold px-2">${data.name}</span>
                                 <span class="text-muted px-2">${data.date}</span>

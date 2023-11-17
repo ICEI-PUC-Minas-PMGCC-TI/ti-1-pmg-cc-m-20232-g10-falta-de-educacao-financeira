@@ -1,4 +1,4 @@
-import routes from './routes.js'
+import { routes } from './routes.js'
 import { fetchHeaders } from './fetch.js'
 import { loading } from './loading.js'
 
