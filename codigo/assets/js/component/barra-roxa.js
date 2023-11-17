@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const usuarios = await response.json();
 
         // Encontrar o usuário com o ID especificado
-        const usuario = usuarios.find((user) => user.id === 29);
+        const usuario = usuarios.find((user) => user.id === 20);
 
         if (usuario) {
           // Calcular a soma das despesas a partir de despesas, despesasMes e lazer

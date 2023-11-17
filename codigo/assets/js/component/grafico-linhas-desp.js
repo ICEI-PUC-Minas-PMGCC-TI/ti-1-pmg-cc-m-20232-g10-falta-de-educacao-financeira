@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Conhecendo teoricamente o ID do usuário após o login
-    const userId = "29"; // Substitua pelo ID do usuário que você conhece
+    const userId = "24"; // Substitua pelo ID do usuário que você conhece
 
     // Obter dados do servidor JSON
     fetch("https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios")
