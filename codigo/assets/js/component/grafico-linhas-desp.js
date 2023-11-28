@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Conhecendo teoricamente o ID do usuário após o login
-    const userId = "24"; // Substitua pelo ID do usuário que você conhece
+    const userId = "1"; // Substitua pelo ID do usuário que você conhece
 
     // Obter dados do servidor JSON
     fetch("https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios")
@@ -65,9 +65,9 @@ document.addEventListener("DOMContentLoaded", function() {
     function getExpensesData(user) {
         if (user.expenses) {
             return [
-                parseFloat(user.expenses.despesas.replace('R$', '').replace(',', '.')),
-                parseFloat(user.expenses.despesasMes.replace('R$', '').replace(',', '.')),
-                parseFloat(user.expenses.lazer.replace('R$', '').replace(',', '.'))
+                parseFloat(user.expenses.aluguel.replace(',', '.')),
+                parseFloat(user.expenses.alimentacao.replace(',', '.')),
+                parseFloat(user.expenses.lazer.replace(',', '.'))
             ];
         } else {
             console.error("Usuário não possui dados de despesas.");
@@ -79,9 +79,9 @@ document.addEventListener("DOMContentLoaded", function() {
     function getIncomingsData(user) {
         if (user.incomings) {
             return [
-                parseFloat(user.incomings.salario.replace(',', '.')),
-                parseFloat(user.incomings.bonus.replace(',', '.')),
-                parseFloat(user.incomings.ativos.replace(',', '.'))
+                parseFloat(user.incomings.salario),
+                parseFloat(user.incomings.bonus),
+                parseFloat(user.incomings.ativos)
             ];
         } else {
             console.error("Usuário não possui dados de receitas.");
