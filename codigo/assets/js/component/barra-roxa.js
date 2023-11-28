@@ -1,5 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", function () {
-  const apiUrl = "https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios";
+  const apiUrl = 'https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios';
   const userId = 1; // Substitua pelo ID do usuário desejado
 
   // Função para buscar os dados da API e definir as alturas das barras roxas
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const usuarios = await response.json();
 
         // Encontrar o usuário com o ID especificado
-        const usuario = usuarios.find((user) => user.id === 29);
+        const usuario = usuarios.find((user) => user.id === 1);
 
         if (usuario) {
           // Calcular a soma das despesas a partir de despesas, despesasMes e lazer
