@@ -32,7 +32,7 @@ function registerIncoming(obj) {
       console.log(response.json())
     })
     .then(data => {
-      console.log('Success:');
+      console.log('Success: ');
       console.log(data);
     })
     .catch(error => {
