@@ -65,8 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function getExpensesData(user) {
         if (user.expenses) {
             return [
-                parseFloat(user.expenses.aluguel.replace(',', '.')),
-                parseFloat(user.expenses.alimentacao.replace(',', '.')),
+                parseFloat(user.expenses.fixos.replace(',', '.')),
+                parseFloat(user.expenses.variados.replace(',', '.')),
                 parseFloat(user.expenses.lazer.replace(',', '.'))
             ];
         } else {
