@@ -1,6 +1,6 @@
 /* styles.css */
 body {
-    font-family: 'Nunito',sans-serif, Arial;
+    font-family: 'Nunito', sans-serif, Arial;
     margin: 0;
     padding: 0;
     background-color: #eaecee;
@@ -12,18 +12,20 @@ body {
 }
 
 .video-column {
-    flex: 2; /* Coluna do vídeo, mais larga */
+    flex: 2;
+    /* Coluna do vídeo, mais larga */
     padding: 20px;
     background-color: #eaecee;
 }
 
 .cards-column {
-     /* Coluna de cards, mais estreita */
+    /* Coluna de cards, mais estreita */
     padding: 20px;
     background-color: #eaecee;
-    
+
 }
-.input-group-text{
+
+.input-group-text {
     border: 0;
     background-color: #ffffff;
     display: flexbox;
@@ -31,16 +33,16 @@ body {
 
 .card {
     box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
-   
     margin: 20px;
     width: 400px;
     transition: all 0.3s ease-out;
     border-radius: 10px;
-  }
-  .card:hover {
+}
+
+.card:hover {
     transform: translateY(-5px);
     cursor: pointer;
-  }
+}
 
 
 .comments-column {
@@ -48,9 +50,11 @@ body {
     padding: 20px;
     background-color: #f0f0f0;
 }
+
 .video-container {
     width: 100%;
-    padding-bottom: 56.25%; /* Proporção para vídeos 16:9 */
+    padding-bottom: 56.25%;
+    /* Proporção para vídeos 16:9 */
     position: relative;
 }
 
@@ -61,6 +65,7 @@ body {
     top: 0;
     left: 0;
 }
+
 .comment {
     background-color: white;
     border: 1px solid #ccc;
@@ -150,6 +155,7 @@ body {
     font-size: 16px;
     color: #5357b6;
 }
+
 .comment-input {
     flex: 1;
     margin-right: 10px;
@@ -190,6 +196,7 @@ body {
     height: 50px;
     border-radius: 50%;
 }
+
 .line {
     display: flex;
     align-items: center;
@@ -204,27 +211,36 @@ body {
 
 .arrow-icon {
     margin-left: 15px;
-    fill: #050505 !important; /* cor do ícone (azul no exemplo) */
+    fill: #050505 !important;
+    /* cor do ícone (azul no exemplo) */
 }
+
 .line h7 {
     color: #b5b5bb;
 }
-#search{
+
+#search {
     color: #b5b5bb;
 }
-#arrow{
+
+#arrow {
     margin-left: 90px;
-    fill: #050505 !important; /* cor do ícone (azul no exemplo) */
+    fill: #050505 !important;
+    /* cor do ícone (azul no exemplo) */
 }
-#icon{
+
+#icon {
     margin: 7px;
-    fill: #050505 !important; /* cor do ícone (azul no exemplo) */
+    fill: #050505 !important;
+    /* cor do ícone (azul no exemplo) */
 }
+
 #avatar {
     fill: #5357b6;
     margin: 10px;
 }
-.reply-link a{
+
+.reply-link a {
     font-size: 13px;
     color: #5357b6 !important;
 }
@@ -248,11 +264,12 @@ body {
     padding: 10px;
     gap: 10px;
 }
+
 * {
     box-sizing: border-box;
-  }
-  
-  .item {
+}
+
+.item {
     /* visual styling */
     flex-shrink: 0;
     color: white;
@@ -263,13 +280,13 @@ body {
     border-radius: 20px;
     padding: 10px;
     background-color: white;
-  }
-  
-  .item:nth-child(odd) {
+}
+
+.item:nth-child(odd) {
     background: #ffffff;
-  }
-  
-  /* .item:nth-child(even) {
+}
+
+/* .item:nth-child(even) {
     background: repeating-linear-gradient(
       45deg,
       #dd6b20,
