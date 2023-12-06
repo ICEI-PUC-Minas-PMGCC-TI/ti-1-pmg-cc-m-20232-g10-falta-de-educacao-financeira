@@ -49,7 +49,7 @@
         </div>
         <div class="modal-body">
             <div id="login-box" class="col-md-12">
-                <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
+                <form id="login-form" class="form" method="post" onsubmit="loginUser(this)">
                     <h3 class="text-center text-info">Novo usuário</h3>
                     <div class="form-group">
                         <label for="login" class="text-info">Usuário</label><br>
@@ -95,7 +95,7 @@
                 var password = document.getElementById('password').value;
 
                 // Valida login e se estiver ok, redireciona para tela inicial da aplicação
-                resultadoLogin = loginUser (username, password);
+                resultadoLogin = loginUser(username, password);
                 if (resultadoLogin) {
                     window.location.href = 'index.html';
                 }
