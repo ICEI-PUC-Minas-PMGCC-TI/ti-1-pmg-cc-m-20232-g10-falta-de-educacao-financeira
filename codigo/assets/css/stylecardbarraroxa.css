@@ -1,3 +1,8 @@
+
+main {
+    min-height: -webkit-fill-available;
+    max-height: 100vh;
+}
 html {
     font-family: 'Open Sans';font-size: 22px;
 }
@@ -132,4 +137,57 @@ html {
     font-weight: 600;
     letter-spacing: 0.11px;
     word-wrap: break-word;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.btn {
+    display: flex;
+    padding: 17px 9px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 10px;
+    border: 1px solid rgba(26, 39, 163, 0.55);
+    background: rgba(66, 82, 225, 0.3);
+}
+
+#abacate {
+    background: #FAFAFA;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    position: absolute;
+    top: 80vh;
+    bottom:0;
+    right: 0;
+ 
+
+}
+
+#melancia {
+    position: absolute;
+    right: 0;
+}
+
+.style12 {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 5px 5px -5px #8c8b8b inset;
+}
+
+.div-search .fa-search {
+    margin-right: 5px;
+    font-size: 1.5rem;
+    width: 2rem;
+}
+
+.div-search .input-search {
+    width: 100%;
+    border: 0;
+}
+
+.div-search .input-search:focus {
+    outline: 0;
 }

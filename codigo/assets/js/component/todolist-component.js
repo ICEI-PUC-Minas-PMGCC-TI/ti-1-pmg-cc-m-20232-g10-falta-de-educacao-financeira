@@ -29,3 +29,5 @@ function deleteTask(id) {
             console.error('erro ao deletar task', error);
         })
 }
+
+
