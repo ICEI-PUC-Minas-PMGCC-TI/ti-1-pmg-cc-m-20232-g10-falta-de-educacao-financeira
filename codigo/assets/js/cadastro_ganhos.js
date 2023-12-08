@@ -1,5 +1,3 @@
-import { apiPath } from "./apiPath";
-
 
 async function readUsers() {
 

@@ -53,7 +53,8 @@
             </form>
             <form class="needs-validation" novalidate>
                 <div class="row g-3 mb-2 my-3">
-                    <div class="col-md-10"><label for="bonus" class="form-label">Informe quaisquer bônus
+                    <div class="col-md-10">
+                        <label for="bonus" class="form-label">Informe quaisquer bônus
                             mensal</label>
                         <input type="text" class="form-control" id="bonus" oninput="formatarMoeda(this)"
                             placeholder="Insira aqui seus bônus!" value="" required>
@@ -66,7 +67,8 @@
             </form>
 
             <div class="row g-3 mb-2 my-3" id="options">
-                <div class="col-md-10"><label for="ativos" class="form-label">Você possui algum tipo de
+                <div class="col-md-10">
+                    <label for="ativos" class="form-label">Você possui algum tipo de
                         investimento?</label>
                     <select class="form-select" id="ativos" required>
                         <option value="">Escolha uma opção</option>
@@ -117,7 +119,10 @@
         </footer>
     </div>
     <script src="../../assets/js/cadastro_ganhos.js"></script>
+    
     <script>
+        const apiPath = "https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios";
+
         const hasInvestments = document.getElementById('ativos');
 
         const campoAdicional = document.getElementById('campoAdicional');
