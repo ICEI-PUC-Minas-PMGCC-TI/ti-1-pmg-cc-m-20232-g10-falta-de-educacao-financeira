@@ -70,11 +70,63 @@
                                 <button type="button" class="btn btn-primary mx-auto w-100" id="login-button">Login
                                 </button>
                             </div>
-                            <p class="text-center">Ainda não tem uma conta, <a href="#">Cadastre-se</a></p>
+                            <p class="text-center">Ainda não tem uma conta,  <button class="btn-link" type="button" data-bs-toggle="modal"
+                                data-bs-target="#CadastroForm" id="modal-button"><a href="#" id="cadastro">Cadastre-se</a></button>
+                            </p>
+                        </form>
+
+                        
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="CadastroForm" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <!-- Login Form -->
+                        <form method="post" id="cadastro-form">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Cadastre-se na PROKNOW</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="Usuario">Usuario<span class="text-danger">*</span></label>
+                                    <input type="text" name="usuario" class="form-control" id="newUsername"
+                                        placeholder="Insira um usuario">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Nome">Nome completo<span class="text-danger">*</span></label>
+                                    <input type="text" name="nome" class="form-control" id="nome"
+                                        placeholder="Insira seu nome completo">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Nome">Email<span class="text-danger">*</span></label>
+                                    <input type="text" name="email" class="form-control" id="email"
+                                        placeholder="Insira seu email">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="Senha">Senha<span class="text-danger">*</span></label>
+                                    <input type="Senha" name="senha" class="form-control" id="newPassword"
+                                        placeholder="Insira uma senha">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Senha">Confirme sua senha<span class="text-danger">*</span></label>
+                                    <input type="Senha" name="senha" class="form-control" id="newPasswordConfirmation"
+                                        placeholder="Confirme sua senha">
+                                </div>
+                            </div>
+                            <div class="modal-footer pt-4">
+                                <button type="button" class="btn btn-primary mx-auto w-100" id="cadastro-button">Cadastrar
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
+
 
         </main>
 
@@ -93,7 +145,7 @@
 
 
 
-        function processaFormLogin(event) {
+        async function processaFormLogin(event) {
             event.preventDefault();
 
             // Captura dos valores dos campos de texto
@@ -106,16 +158,15 @@
                 return;
             }
 
-            // Tentativa de login
-            let user = login(username, password);
+            let user = await login(username, password);
+
             if (user) {
-                // Login bem-sucedido, redirecionar para a página inicial
-                //window.location.href = 'contenthub.html';
-                console.log("entrei aqui e chamei o login", user);
+                console.log("finalmente caralho", user);
             } else {
-                // Login falhou, mostrar uma mensagem de erro
-                alert('Login falhou. Por favor, verifique seu usuário e senha.');
+                alert('Usuário ou senha incorretos');
             }
+
+
         }
 
         document.addEventListener('DOMContentLoaded', () => {

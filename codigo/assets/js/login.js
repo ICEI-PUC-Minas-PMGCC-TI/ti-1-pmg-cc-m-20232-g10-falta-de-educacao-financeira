@@ -1,5 +1,5 @@
 const LOGIN_URL = "login.html";
-const apiPath = "'https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios'";
+const apiPath = "https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios";
 
 function generateUUID() {
     var d = new Date().getTime();
@@ -18,51 +18,60 @@ function generateUUID() {
 }
 
 
-async function fetchData() {
+function fetchData() {
     try {
-        await fetch(apiPath)
+        return fetch(apiPath)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                console.log("eu to sendo impresso ", data);
+                return data;
             });
     } catch (error) {
         console.log(error);
     }
-
-    function getUser(data) {
-
+}
 
 
+
+async function saveUser(user) {
+    try {
+        const response = await fetch(apiPath, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        });
+        const data = await response.json();
+        console.log('Success:', data);
+
+    } catch (error) {
+        console.error('Erro:', error);
     }
+}
 
-    async function saveUser(user) {
-        try {
-            const response = await fetch(apiPath, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(user),
-            });
-            const data = await response.json();
-            console.log('Success:', data);
 
-        } catch (error) {
-            console.error('Erro:', error);
+async function login(username, password) {
+    let users = await fetchData();
+
+    for (const user of users) {
+        console.log(user.login, user.senha)
+        if (user.login === username && user.senha === password) {
+            sessionStorage.setItem("usuarioAtual", JSON.stringify(user));
+            console.log('usuario encontrado');
+            return true;
         }
     }
 
-
-    function login(username, password) {
-        let user = getUser(username);
-        console.log('teste user dentro de login', user);;
-    }
-
-
-    function logout() {
-        localStorage.removeItem("usuarioUsuario");
-    }
-
-    document.addEventListener("DOMContentLoaded", fetchData)
-
+    return false;
 }
+
+
+function logout() {
+    sessionStorage.removeItem("usuarioAtual");
+    window.location = 'index.html';
+}
+
+
+
+

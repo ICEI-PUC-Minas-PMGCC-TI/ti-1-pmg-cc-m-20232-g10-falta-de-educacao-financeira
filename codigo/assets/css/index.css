@@ -44,3 +44,11 @@ body {
     font-weight: 250;
     line-height: normal;
 }
+
+.btn-link {
+    background: none !important;
+    border: none;
+    padding: 0;
+    /* opcional: você pode querer manter o cursor como um ponteiro */
+    cursor: pointer;
+}
