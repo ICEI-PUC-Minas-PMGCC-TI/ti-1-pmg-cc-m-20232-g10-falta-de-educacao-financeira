@@ -1,66 +1,74 @@
-document.addEventListener("DOMContentLoaded", async function () {
-  try {
-      const apiPath = 'https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios';
 
-      async function fetchData() {
-          // Supondo que você tenha uma maneira de obter o nome de usuário (substitua 'username' pelo valor real)
-          const username = 'username';
+document.addEventListener("DOMContentLoaded", function () {
+  const apiUrl = 'https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios';
+  const userId = 1; // Substitua pelo ID do usuário desejado
 
-          try {
-              const usuario = await getData(username);
+  // Função para buscar os dados da API e definir as alturas das barras roxas
+  async function fetchData() {
+    try {
+   
+      const response = await fetch(apiUrl);
+      if (response.ok) {
+        const usuarios = await response.json();
 
-              if (usuario) {
-                  // Restante do código para processar os dados do usuário
-                  const despesas = parseFloat((usuario.expenses?.despesas || 'R$ 0,00').replace('R$ ', '').replace(',', '.')) || 0;
-                  const despesasMes = parseFloat((usuario.expenses?.despesasMes || 'R$ 0,00').replace('R$ ', '').replace(',', '.')) || 0;
-                  const lazer = parseFloat((usuario.expenses?.lazer || 'R$ 0,00').replace('R$ ', '').replace(',', '.')) || 0;
+        // Encontrar o usuário com o ID especificado
+        const usuario = usuarios.find((user) => user.id === 1);
 
-                  const totalDespesas = despesas + despesasMes + lazer;
+        if (usuario) {
+          // Calcular a soma das despesas a partir de despesas, despesasMes e lazer
+          const despesas = parseFloat((usuario.expenses?.despesas || 'R$ 0,00').replace('R$ ', '').replace(',', '.')) || 0;
+          const despesasMes = parseFloat((usuario.expenses?.despesasMes || 'R$ 0,00').replace('R$ ', '').replace(',', '.')) || 0;
+          const lazer = parseFloat((usuario.expenses?.lazer || 'R$ 0,00').replace('R$ ', '').replace(',', '.')) || 0;
 
-                  const alturaMaxima = 80;
+          const totalDespesas = despesas + despesasMes + lazer;
 
-                  const porcentagensSemanais = {
-                      domingo: 5,
-                      segunda: 10,
-                      terca: 15,
-                      quarta: 20,
-                      quinta: 15,
-                      sexta: 10,
-                      sabado: 25,
-                  };
+          // Altura máxima da barra roxa
+          const alturaMaxima = 80;
+          
+          // Porcentagens de gastos fictícias para cada dia da semana (ajuste conforme necessário)
+          const porcentagensSemanais = {
+            domingo: 5,   // Porcentagem de gastos para domingo
+            segunda: 10,  // Porcentagem de gastos para segunda
+            terca: 15,    // Porcentagem de gastos para terça
+            quarta: 20,   // Porcentagem de gastos para quarta
+            quinta: 15,   // Porcentagem de gastos para quinta
+            sexta: 10,    // Porcentagem de gastos para sexta
+            sabado: 25,   // Porcentagem de gastos para sábado
+          };
 
-                  for (const dia in porcentagensSemanais) {
-                      const porcentagem = porcentagensSemanais[dia];
-                      const alturaBarra = (totalDespesas * porcentagem / 100) * (alturaMaxima / totalDespesas);
-                      const barraRoxa = document.getElementById(dia);
-                      barraRoxa.style.height = `${alturaBarra}px`;
-                  }
-
-                  document.getElementById("valor").textContent = `R$ ${(totalDespesas / 4).toFixed(2)}`;
-              } else {
-                  console.error("Usuário não encontrado.");
-              }
-          } catch (error) {
-              console.error("Erro ao processar os dados do usuário: ", error);
-          }
-      }
-
-      async function getData(username) {
-          const response = await fetch(`${apiPath}?login=${username}`);
-
-          if (!response.ok) {
-              throw new Error("Não foi possível encontrar o usuário!");
+          // Definir a altura da barra roxa para cada dia com base nas porcentagens
+          for (const dia in porcentagensSemanais) {
+            const porcentagem = porcentagensSemanais[dia];
+            const alturaBarra = (totalDespesas * porcentagem / 100) * (alturaMaxima / totalDespesas);
+            const barraRoxa = document.getElementById(dia);
+            barraRoxa.style.height = `${alturaBarra}px`;
           }
 
-          return await response.json();
+         // Exibir o valor total de despesas na div com id "valor"
+         document.getElementById("valor").textContent = `R$ ${(totalDespesas/4).toFixed(2)}`;
+        } else {
+          console.error("Usuário não encontrado.");
+        }
+      } else {
+        console.error("Erro ao buscar os dados da API.");
       }
-
-      // Chame a função para buscar os dados da API e calcular as despesas do usuário
-      fetchData();
-  } catch (error) {
+    } catch (error) {
       console.error("Ocorreu um erro: ", error);
+    }
   }
+
+  // Chame a função para buscar os dados da API e calcular as despesas do usuário
+  fetchData();
 });
+
+
+
+
+
+
+
+
+
 
 
 
