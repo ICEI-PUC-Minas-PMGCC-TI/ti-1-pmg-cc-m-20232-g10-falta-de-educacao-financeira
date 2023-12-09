@@ -83,7 +83,7 @@ div#card-videos::-webkit-scrollbar-thumb {
 }
 
 .div-content-video:hover {
-    box-shadow: inset 0 0 1px 1px red !important;
+    box-shadow: inset 0 0 1px 1px #4252E1 !important;
     transition: all linear .2s !important;
 }
 
@@ -119,4 +119,54 @@ div#card-videos::-webkit-scrollbar-thumb {
 form:has(.url-not-valid) label[for=url-video]::after {
     content: ' * The URL belongs to the YouTube domain';
     color: #f00;
+}
+
+/* Adicione estas regras CSS no final do seu arquivo CSS */
+
+/* ... (seu código existente) ... */
+
+/* Adicione estas regras CSS para tornar a página responsiva */
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        padding-top: 15px;
+        position: relative;
+        transition: width 0.5s; /* Adiciona uma transição suave para a largura da barra lateral */
+    }
+
+    #main {
+        margin-left: 0;
+    }
+
+    .sidebar:hover .nav-link .txt {
+        display: inline;
+    }
+
+    .sidebar .nav-link {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .sidebar .nav {
+        flex-direction: row;
+    }
+
+    .dropdown {
+        position: static;
+        margin-top: 15px;
+        width: 100%; /* Garante que a dropdown ocupe toda a largura quando a barra lateral está fechada */
+    }
+
+    #sidebar:not(:hover) + .dropdown {
+        display: none;
+    }
+
+    .btn-toggle-nav a {
+        margin-left: 0; /* Remove a margem esquerda nos itens de navegação */
+    }
+
+    .btn-toggle-nav {
+        text-align: center; /* Centraliza os itens de navegação no modo responsivo */
+    }
 }
