@@ -23,7 +23,7 @@ function fetchData() {
         return fetch(apiPath)
             .then(response => response.json())
             .then(data => {
-                console.log("eu to sendo impresso ", data);
+                
                 return data;
             });
     } catch (error) {
@@ -33,24 +33,6 @@ function fetchData() {
 
 
 
-async function saveUser(user) {
-    try {
-        const response = await fetch(apiPath, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(user),
-        });
-        const data = await response.json();
-        console.log('Success:', data);
-
-    } catch (error) {
-        console.error('Erro:', error);
-    }
-}
-
-
 async function login(username, password) {
     let users = await fetchData();
 
@@ -58,7 +40,9 @@ async function login(username, password) {
         console.log(user.login, user.senha)
         if (user.login === username && user.senha === password) {
             sessionStorage.setItem("usuarioAtual", JSON.stringify(user));
-            console.log('usuario encontrado');
+        
+            window.location = './pages/dashboard.html';
+
             return true;
         }
     }
