@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/stylecrud.css">
+    <link rel="stylesheet" href="../../assets/css/stylecrud.css">
     <title>PROKNOW</title>
 </head>
 
@@ -37,22 +37,24 @@
         </header>
 
         <main>
+
             <form class="needs-validation" novalidate>
-                <div class="row">
-                    <div class="row g-3 mb-2">
-                        <div class="col-sm-6">
-                            <label for="currency" class="form-label">Informe seu salário liquido</label>
-                            <input type="text" class="form-control" id="currency" oninput="formatarMoeda(this)"
-                                placeholder="Insira aqui seu salário!" value="" required>
-                            <div class="invalid-feedback">
-                                Por favor, insira seu salário!
-                            </div>
+
+                <div class="row g-3 mb-2 my-3">
+                    <div class="col-md-10">
+                        <label for="currency" class="form-label">Informe seu salário liquido</label>
+                        <input type="text" class="form-control" id="currency" oninput="formatarMoeda(this)"
+                            placeholder="Insira aqui seu salário!" value="" required>
+                        <div class="invalid-feedback">
+                            Por favor, insira seu salário!
                         </div>
                     </div>
+                </div>
             </form>
             <form class="needs-validation" novalidate>
-                <div class="row g-3 mb-2">
-                    <div class="col-sm-6"><label for="bonus" class="form-label">Informe quaisquer bônus
+                <div class="row g-3 mb-2 my-3">
+                    <div class="col-md-10">
+                        <label for="bonus" class="form-label">Informe quaisquer bônus
                             mensal</label>
                         <input type="text" class="form-control" id="bonus" oninput="formatarMoeda(this)"
                             placeholder="Insira aqui seus bônus!" value="" required>
@@ -61,10 +63,12 @@
                         </div>
                     </div>
                 </div>
+
             </form>
 
-            <div class="row g-3 mb-2" id="options">
-                <div class="col-sm-6"><label for="ativos" class="form-label">Você possui algum tipo de
+            <div class="row g-3 mb-2 my-3" id="options">
+                <div class="col-md-10">
+                    <label for="ativos" class="form-label">Você possui algum tipo de
                         investimento?</label>
                     <select class="form-select" id="ativos" required>
                         <option value="">Escolha uma opção</option>
@@ -74,8 +78,8 @@
                 </div>
             </div>
             <form class="needs-validation" novalidate>
-                <div class="row g-3 mb-2" id="campoAdicional" style="display: none;">
-                    <div class="col-sm-6">
+                <div class="row g-3 mb-2 my-3" id="campoAdicional" style="display: none;">
+                    <div class="col-md-10">
                         <label for="ganhos" class="form-label">Insira os ganhos provenientes destes
                             investimentos</label>
                         <input type="text" class="form-control" id="ganhos" oninput="formatarMoeda(this)"
@@ -88,8 +92,9 @@
 
             </form>
 
-            <div class="row g-3 mb-2">
-                <div class="col col-md-6 mb-3">
+
+            <div class="row g-3 mb-2 my-3">
+                <div class="col-md-10 mb-3">
                     <div class="d-flex flex-column flex-sm-row gap-2">
                         <button class="btn btn-primary w-100 btn-md" type="submit" id="btnRegistro">Prosseguir</button>
                     </div>
@@ -113,8 +118,11 @@
 
         </footer>
     </div>
-    <script src="../assets/js/cadastro_ganhos.js"></script>
+    <script src="../../assets/js/cadastro_ganhos.js"></script>
+    
     <script>
+        const apiPath = "https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios";
+
         const hasInvestments = document.getElementById('ativos');
 
         const campoAdicional = document.getElementById('campoAdicional');
@@ -142,15 +150,24 @@
         }
 
         function init() {
+<<<<<<< HEAD
             const forms = document.querySelectorAll('.needs-validation');
 
             // Loop over them and prevent submission
             Array.from(forms).forEach(form => {
 
+=======
+            readIncoming();
+            const forms = document.querySelectorAll('.needs-validation');
+            btnRegistro = document.getElementById('btnRegistro');
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+>>>>>>> salvar-no-db
                 form.addEventListener('submit', event => {
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
+<<<<<<< HEAD
 
                     }
 
@@ -175,14 +192,47 @@
                             bonus: bonus,
                             hasInvestments: invest === 'Sim' ? true : false,
                             ativos: invest === 'Sim' ? ativos : " "
+=======
+                    }
+
+
+
+                    const salario = document.getElementById('currency').value; // Valor do campo "salario"
+                    const bonus = document.getElementById('bonus').value;
+                    const invest = document.getElementById('ativos') // Valor do campo "bonus"
+                    const ativos = document.getElementById('ganhos').value;
+                    console.log(salario)
+                    console.log(bonus)
+
+                    let objIncoming = {
+                        id: 8,
+                        login: "joao.mateuspiroquinha",
+                        senha: "0009",
+                        nome: "joao matue",
+                        email: "matheussemaga@gmail.com",
+                        telefone: "(69)95323422",
+                        cidade: "Little brumas",
+                        incomings: {
+                            salarios: salario,
+                            bonus: bonus,
+                            hasInvestments: invest == 'Sim' ? true : false,
+                            ativos: invest == 'Sim' ? ativos : " "
+>>>>>>> salvar-no-db
                         }
                     }
 
                     registerIncoming(objIncoming);
+<<<<<<< HEAD
+=======
+
+
+                    form.classList.add('was-validated')
+>>>>>>> salvar-no-db
                 }, false)
             })
 
         }
+<<<<<<< HEAD
         async function assignIncoming() {
             try {
                 const response = await fetch(apiPath);
@@ -199,16 +249,16 @@
 
                         await updateUser(user);
                         console.log('Atribuido incoming ao usuario: ', user);
-                        break; 
+                        break;
                     }
                 }
-            } catch(error) {
-               console.error('Erro ao atribuir incoming ao usuario: ', error);
+            } catch (error) {
+                console.error('Erro ao atribuir incoming ao usuario: ', error);
             }
         }
 
-        async function updateUser(user){
-            try{
+        async function updateUser(user) {
+            try {
                 await fetch(apiPath, {
                     method: 'PUT',
                     headers: {
@@ -216,11 +266,13 @@
                     },
                     body: JSON.stringify(user)
                 });
-                
-            } catch (error){
+
+            } catch (error) {
                 console.error("Erro no update do usuário", error);
             }
         }
+=======
+>>>>>>> salvar-no-db
 
         function deleteUser(id) {
             fetch(apiPath + 'id', {
