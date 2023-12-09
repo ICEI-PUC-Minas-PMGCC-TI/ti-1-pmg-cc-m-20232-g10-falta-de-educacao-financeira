@@ -33,24 +33,6 @@ function fetchData() {
 
 
 
-async function saveUser(user) {
-    try {
-        const response = await fetch(apiPath, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(user),
-        });
-        const data = await response.json();
-        console.log('Success:', data);
-
-    } catch (error) {
-        console.error('Erro:', error);
-    }
-}
-
-
 async function login(username, password) {
     let users = await fetchData();
 
