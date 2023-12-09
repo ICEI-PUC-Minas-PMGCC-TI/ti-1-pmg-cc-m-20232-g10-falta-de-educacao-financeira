@@ -18,12 +18,12 @@ function generateUUID() {
 }
 
 
-async function fetchData() {
+function fetchData() {
     try {
-        await fetch(apiPath)
+        return fetch(apiPath)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                
                 return data;
             });
     } catch (error) {
@@ -31,61 +31,31 @@ async function fetchData() {
     }
 }
 
-function getUser(username) {
-
-    let users = fetchData();
-    return users.find(user => user.username === username);
-
-}
-
-async function saveUser(user) {
-    try {
-        const response = await fetch(apiPath, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(user),
-        });
-        const data = await response.json();
-        console.log('Success:', data);
-
-    } catch (error) {
-        console.error('Erro:', error);
-    }
-}
 
 
-function login(username, password) {
-    let user = getUser(username);
-    if (user) {
-        if (user.password === password) {
-            localStorage.setItem("usuarioUsuario", JSON.stringify(user));
-            //window.location.href = "index.html";
-            console.log("Login efetuado com sucesso");
-        } else {
-            alert("Usuario ou senha invalidos");
+async function login(username, password) {
+    let users = await fetchData();
+
+    for (const user of users) {
+        console.log(user.login, user.senha)
+        if (user.login === username && user.senha === password) {
+            sessionStorage.setItem("usuarioAtual", JSON.stringify(user));
+        
+            window.location = './pages/dashboard.html';
+
+            return true;
         }
-    } else {
-        let newUser = {
-            id: generateUUID(),
-            login: username,
-            senha: password,
-            nome: '',
-            email: ''
-        };
-        saveUser(newUser);
-        // O usuário está logado
-        sessionStorage.setItem('usuarioCorrente', JSON.stringify(newUser));
-        console.log("temos que chamar o modal de cadastro");
     }
+
+    return false;
 }
 
 
 function logout() {
-    localStorage.removeItem("usuarioUsuario");
+    sessionStorage.removeItem("usuarioAtual");
+    window.location = 'index.html';
 }
 
-document.addEventListener("DOMContentLoaded", fetchData)
+
 
 

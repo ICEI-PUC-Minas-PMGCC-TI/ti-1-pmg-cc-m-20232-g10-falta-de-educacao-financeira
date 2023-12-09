@@ -1,4 +1,3 @@
-const apiPath = 'https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios';
 async function getData() {
     const response = await fetch(apiPath);
     if (!response.ok) {
@@ -10,13 +9,11 @@ async function getData() {
 
 async function showUsername() {
     try {
+        
+        const data = JSON.parse(sessionStorage.getItem("usuarioAtual"));
+        const name = data.nome;
 
-        //temos que pegar o usuario do localStorage/sessionStorage quando ele logar
-        const data = await getData();
-        const firstUser = data[0];
-        const username = firstUser.nome;
-
-        document.getElementById("username").textContent = username;
+        document.getElementById("username").textContent = name;
     } catch (error) {
         console.error("Erro ao obter o nome do usuario: ", error);
     }

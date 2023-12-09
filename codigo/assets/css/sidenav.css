@@ -91,7 +91,8 @@ html {
 }
 
 .sidebar .nav-link {
-    padding-right: 10px;
+   margin-right: 1.2rem;
+
 }
 
 .sidebar .nav-link.selected {
@@ -193,5 +194,57 @@ main .sidebar {
 
 
 
+/* Adicione estas regras CSS */
 
+.dropdown {
+    position: fixed;
+    bottom: 0;
+    z-index: 1000; /* Um valor alto para garantir que esteja acima da barra lateral */
+    
+}
+
+#sidebar {
+    z-index: 999; /* Um valor menor do que o z-index da dropdown para garantir que a barra lateral esteja abaixo */
+}
+
+#sidebar:not(:hover) + .dropdown {
+    display: block; /* Exibe a dropdown quando a barra lateral não está em hover */
+}
+
+/* Adicione estas regras CSS no final do seu arquivo CSS */
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; /* Altera a largura para ocupar 100% da largura da tela */
+        padding-top: 15px;
+        position: relative; /* Muda a posição para relativa */
+    }
+
+    #main {
+        margin-left: 0; /* Remove a margem à esquerda */
+    }
+
+    .sidebar:hover .nav-link .txt {
+        display: inline; /* Mantém o texto visível ao passar o mouse */
+    }
+
+    .sidebar .nav-link {
+        margin-right: 0; /* Remove a margem direita */
+        margin-bottom: 5px; /* Adiciona um espaçamento entre os links */
+    }
+
+    .sidebar .nav {
+        flex-direction: row; /* Muda a direção para linha */
+    }
+
+    .dropdown {
+        position: static; /* Altera para a posição padrão */
+        /*display: none; /* Oculta a dropdown por padrão */
+        margin-top: 15px; /* Adiciona um espaçamento entre a barra lateral e a dropdown */
+    }
+
+    #sidebar:not(:hover) + .dropdown {
+        display: none; /* Oculta a dropdown quando a barra lateral não está em hover */
+    }
+}
 
