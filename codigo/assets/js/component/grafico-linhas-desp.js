@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    debugger;
     try {
         const apiPath = 'https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios';
 
@@ -30,6 +29,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         // Criar gráfico de despesas e receitas para o usuário específico
         var ctxExpensesIncomings = document.getElementById("expensesIncomingsChart");
+
         if (ctxExpensesIncomings) {
             var expensesIncomingsChart = new Chart(ctxExpensesIncomings, {
                 type: 'line',
@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     ]
                 },
                 options: {
+                    maintainAspectRatio: false,
                     responsive: true,
                     scales: {
                         y: {
@@ -93,6 +94,11 @@ document.addEventListener("DOMContentLoaded", async function () {
                         }
                     }
                 }
+            });
+
+            // Update chart size when the window is resized
+            window.addEventListener('resize', function () {
+                expensesIncomingsChart.resize();
             });
         } else {
             console.error("Elemento canvas não encontrado.");
@@ -137,6 +143,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Função fictícia para obter dinamicamente o nome de usuário após o login
     function getLoggedUsername() {
         // Substitua esta lógica pelo método real que você está usando para obter o nome de usuário após o login
-        return "berfofinho";
+        return "carol";
     }
 });
