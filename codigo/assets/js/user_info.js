@@ -11,6 +11,7 @@ async function getData() {
 async function showUsername() {
     try {
 
+        //temos que pegar o usuario do localStorage/sessionStorage quando ele logar
         const data = await getData();
         const firstUser = data[0];
         const username = firstUser.nome;
