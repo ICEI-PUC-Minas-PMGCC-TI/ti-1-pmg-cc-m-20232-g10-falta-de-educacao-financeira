@@ -1,5 +1,5 @@
 const LOGIN_URL = "login.html";
-const apiPath = "'https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios'";
+const apiPath = "https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios";
 
 function generateUUID() {
     var d = new Date().getTime();
