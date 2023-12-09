@@ -340,6 +340,16 @@
 
             let user = createUser(username, password, name, email, salario, bonus, invest, ativos);
 
+            if (username.length === 0 || password.length === 0 || passwordConfirmation.length === 0 || nome.length === 0 || email.length === 0) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            if (password !== passwordConfirmation) {
+                alert('As senhas não coincidem.');
+                return;
+            }
+
             try {
                 const response = await fetch(apiPath, {
                     method: 'POST',
