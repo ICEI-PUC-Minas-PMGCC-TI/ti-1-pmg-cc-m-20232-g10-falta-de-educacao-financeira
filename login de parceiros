@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <const url = 'http://127.0.0.1:5500/index.html';  Substitua pela URL desejada
+
+    name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProKnow</title>
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background: linear-gradient(135deg, #FFA500, #800080);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .button {
+            background: linear-gradient(135deg, #800080, #FFA500);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .input-container label {
+            font-size: 16px;
+        }
+
+        .input-container input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #explanation {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Seja bem-vindo ao ProKnow</h1>
+        <form id="partnerForm">
+            <div class="input-container">
+                <label for="name">Nome do Contato:</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="input-container">
+                <label for="phone">Número de Telefone:</label>
+                <input type="tel" id="phone" required>
+            </div>
+
+            <div class="input-container">
+                <label for="company">Nome da Empresa:</label>
+                <input type="text" id="company" required>
+            </div>
+
+            <div class="input-container">
+                <label for="email">Endereço de E-mail:</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="input-container">
+                <label for="city">Sua cidade de origem:</label>
+                <input type="city" id="city" required>
+            </div>
+
+            <html lang="en">
+<head>
+    <div class="input-container">
+        <label for="city">Deixe um segestão para nós:</label>
+   
+</head>
+<body>
+    <textarea id="textArea" rows="4" cols="50" placeholder="Escreva aqui..."></textarea>
+    <div id="suggestions" style="display: none;">
+        <ul>
+           
+        </ul>
+    </div>
+
+    <script>
+        const textArea = document.getElementById("textArea");
+        const suggestionsDiv = document.getElementById("suggestions");
+        
+        // Lista de sugestões (substitua isso com suas próprias sugestões)
+       
+
+        textArea.addEventListener("input", function () {
+            const text = textArea.value.toLowerCase();
+            const filteredSuggestions = suggestionsList.filter(suggestion => suggestion.toLowerCase().includes(text));
+            
+            if (text.length === 0) {
+                suggestionsDiv.style.display = "BLOCK";
+            } else {
+                suggestionsDiv.style.display = "block";
+                suggestionsDiv.innerHTML = "<ul>" + filteredSuggestions.map(suggestion => `<li>${suggestion}</li>`).join("") + "</ul>";
+            }
+        });
+
+        suggestionsDiv.addEventListener("click", function (event) {
+            if (event.target.tagName === "LI") {
+                textArea.value = event.target.textContent;
+                suggestionsDiv.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+
+           
+
+
+            <div class="button-container">
+                <button class="button" type="submit" id="submitButton">Se Junte a Nós</button>
+                <p id="explanation">Se junte a nós e vamos fazer uma grande parceria.</p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("partnerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const company = document.getElementById("company").value;
+            const email = document.getElementById("email").value;
+
+            // Validar o e-mail
+            if (!isValidEmail(email)) {
+                alert("Por favor, insira um endereço de e-mail válido.");
+                return;
+            }
+
+            // Aqui você pode fazer algo com os dados, como enviar para um servidor ou exibir uma mensagem.
+            alert("Registro de parceiro enviado:\nNome: " + name + "\nTelefone: " + phone + "\nEmpresa: " + company + "\nE-mail: " + email);
+        });
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+    </script>
+</body>
+</html>
