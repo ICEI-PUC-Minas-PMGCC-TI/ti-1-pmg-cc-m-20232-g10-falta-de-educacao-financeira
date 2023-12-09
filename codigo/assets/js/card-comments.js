@@ -7,8 +7,8 @@ export function cardComments(data){
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-1 col-md-2 col-sm-12">
-                        <div class="d-flex flex-lg-row flex-md-column mb-3">
-                            <i role="button" class="like-comment far fa-heart fs-3 text-danger"></i>
+                        <div class="d-flex flex-lg-row flex-md-column mb-3" style = "color: #4252E1;" >
+                            <i role="button" class="like-comment far fa-heart fs-3 " style = "color: #4252E1;"></i>
                             <span class="mx-2">${data.likes}</span>
                         </div>
                     </div>
