@@ -10,12 +10,13 @@ async function getData() {
 
 async function showUsername() {
     try {
+        
+        const data = JSON.parse(sessionStorage.getItem("usuarioAtual"));
+        const name = data.nome;
 
-        const data = await getData();
-        const firstUser = data[0];
-        const username = firstUser.nome;
+        console.log(name);
 
-        document.getElementById("username").textContent = username;
+        document.getElementById("username").textContent = name;
     } catch (error) {
         console.error("Erro ao obter o nome do usuario: ", error);
     }

@@ -23,7 +23,7 @@ function fetchData() {
         return fetch(apiPath)
             .then(response => response.json())
             .then(data => {
-                console.log("eu to sendo impresso ", data);
+                
                 return data;
             });
     } catch (error) {
@@ -40,7 +40,9 @@ async function login(username, password) {
         console.log(user.login, user.senha)
         if (user.login === username && user.senha === password) {
             sessionStorage.setItem("usuarioAtual", JSON.stringify(user));
-            console.log('usuario encontrado');
+        
+            window.location = './pages/dashboard.html';
+
             return true;
         }
     }
