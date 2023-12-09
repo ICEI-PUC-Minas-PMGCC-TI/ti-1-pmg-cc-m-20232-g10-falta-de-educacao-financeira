@@ -93,11 +93,7 @@
                             </div>
                             <div class="modal-body">
 
-<<<<<<< HEAD
-                                <div class="etapa etapa1" style="display: none;">
-=======
                                 <div class="etapa etapa1">
->>>>>>> d1e79d24dfeb6433a69901063fa030e6babc39c0
                                     <div class="mb-3">
                                         <label for="Usuario">Usuario<span class="text-danger">*</span></label>
                                         <input type="text" name="usuario" class="form-control" id="newUsername"
@@ -127,16 +123,10 @@
 
                                 </div>
 
-<<<<<<< HEAD
-                                <div class="etapa etapa2">
-                                    <div class="mb-3">
-                                        <label for="currency" class="form-label">Informe seu salário liquido</label>
-=======
                                 <div class="etapa etapa2" style="display: none;">
                                     <div class="mb-3">
                                         <label for="currency" class="form-label">Informe seu salário liquido<span
                                                 class="text-danger">*</span></label>
->>>>>>> d1e79d24dfeb6433a69901063fa030e6babc39c0
                                         <input type="text" class="form-control" id="currency"
                                             oninput="formatarMoeda(this)" placeholder="Insira aqui seu salário!"
                                             value="" required>
@@ -146,11 +136,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="bonus" class="form-label">Informe quaisquer bônus
-<<<<<<< HEAD
-                                            mensal</label>
-=======
                                             mensal<span class="text-danger">*</span></label>
->>>>>>> d1e79d24dfeb6433a69901063fa030e6babc39c0
                                         <input type="text" class="form-control" id="bonus" oninput="formatarMoeda(this)"
                                             placeholder="Insira aqui seus bônus!" value="" required>
                                         <div class="invalid-feedback">
@@ -159,11 +145,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="ativos" class="form-label">Você possui algum tipo de
-<<<<<<< HEAD
-                                            investimento?</label>
-=======
                                             investimento?<span class="text-danger">*</span></label>
->>>>>>> d1e79d24dfeb6433a69901063fa030e6babc39c0
                                         <select class="form-select" id="ativos" required>
                                             <option value="">Escolha uma opção</option>
                                             <option>Sim</option>
@@ -175,11 +157,7 @@
                                             <div class="col-md-10">
                                                 <label for="ganhos" class="form-label">Insira os ganhos provenientes
                                                     destes
-<<<<<<< HEAD
-                                                    investimentos</label>
-=======
                                                     investimentos<span class="text-danger">*</span></label>
->>>>>>> d1e79d24dfeb6433a69901063fa030e6babc39c0
                                                 <input type="text" class="form-control" id="ganhos"
                                                     oninput="formatarMoeda(this)" placeholder="Insira aqui seus ganhos"
                                                     value="" required>
@@ -189,9 +167,6 @@
                                             </div>
                                         </div>
                                     </form>
-<<<<<<< HEAD
-
-=======
                                 </div>
                                 <div class="etapa etapa3" style="display: none;">
                                     <div class="mb-3">
@@ -222,7 +197,6 @@
                                             Por favor, insira seus gastos com lazer!
                                         </div>
                                     </div>
->>>>>>> d1e79d24dfeb6433a69901063fa030e6babc39c0
                                 </div>
                             </div>
 
@@ -265,8 +239,6 @@
         const cadastroButton = document.getElementById('cadastro-button');
         const avancarButton = document.getElementById('avancar-button');
 
-<<<<<<< HEAD
-=======
         const username = document.getElementById("newUsername").value.trim();
         const name = document.getElementById("nome").value.trim();
         const email = document.getElementById("email").value.trim();
@@ -283,7 +255,6 @@
 
         let etapaAtual = 1;
 
->>>>>>> d1e79d24dfeb6433a69901063fa030e6babc39c0
         async function processaFormLogin(event) {
 
             event.preventDefault();
@@ -292,10 +263,6 @@
             let username = document.getElementById("username").value.trim();
             let password = document.getElementById("password").value.trim();
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d1e79d24dfeb6433a69901063fa030e6babc39c0
             // Verifica se ambos os campos estão preenchidos
             if (username.length === 0 || password.length === 0) {
                 alert('Por favor, preencha ambos os campos de usuário e senha.');
@@ -312,20 +279,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-<<<<<<< HEAD
-            let etapaAtual = 1;
-
-            if (etapaAtual < 3) {
-                cadastroButton.style.display = 'none';
-                avancarButton.style.display = 'block';
-            } else {
-                cadastroButton.style.display = 'block';
-                avancarButton.style.display = 'none';
-            }
-            console.log(etapaAtual);
-
-            function avancaEtapa() {
-=======
 
             cadastroButton.style.display = 'none';
             avancarButton.style.display = 'block';
@@ -335,18 +288,11 @@
 
             function avancaEtapa() {
 
->>>>>>> d1e79d24dfeb6433a69901063fa030e6babc39c0
                 const etapaAtualElement = document.querySelector(`.etapa${etapaAtual}`);
                 etapaAtualElement.style.display = 'none';
 
                 etapaAtual++;
 
-<<<<<<< HEAD
-                if (etapaAtual > 3 || etapaAtual === 1) {
-                    console.log('Enviar dados para o servidor');
-
-                    // Esconde o modal
-=======
                 if (etapaAtual < 3) {
                     cadastroButton.style.display = 'none';
                     avancarButton.style.display = 'block';
@@ -358,7 +304,6 @@
                 console.log('etapa pos ++', etapaAtual);
                 if (etapaAtual > 3) {
 
->>>>>>> d1e79d24dfeb6433a69901063fa030e6babc39c0
                     $('#CadastroForm').modal('hide');
                     return;
                 }
