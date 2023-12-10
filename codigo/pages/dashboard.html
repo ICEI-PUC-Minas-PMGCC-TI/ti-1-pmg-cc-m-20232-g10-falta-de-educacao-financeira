@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <!-- Fontes de Texto -->
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
@@ -23,16 +22,13 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <!-- Fim dos Scripts -->
-
-
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link rel="stylesheet" href="../assets/css/stylecardbarraroxa.css">
     <link rel="stylesheet" href="../assets/css/pagecontenthub.css">
     <link rel="stylesheet" href="../assets/css/sidenav.css">
+
     <title>Dashboard</title>
 </head>
-
 
 <body>
 
@@ -89,7 +85,7 @@
 
     </aside>
 
-    <div class="pushed-content container-fluid mt-3 px-4">
+    <div class="pushed-content container-fluid h-100 mb-4 mt-3 px-4">
         <header class="mb-3">
             <div class="row">
                 <div class="col-lg-8 Ola">
@@ -105,131 +101,132 @@
             </div>
         </header>
 
-            <div class="principal card shadow p-3 mb-5 rounded h-100 d-flex">
-                <div class="card-title d-flex justify-content-between align-items-center px-3">
-                    <h3>Dashboard</h3>
-                    <i class="fa-solid fa-x fa-lg"></i>
-                </div>
-                <div class="row mb-2">
-                    <div class="col-12">
-                        <div class="row g-0 flex-md-row">
-                            <div class="col d-flex flex-column position-static" style="margin-right: 2.5%;">
-                                <div class="card-body shadow p-3 mb-5 rounded bg-white">
-                                    <div class="card-title d-flex justify-content-between align-items-center px-3">
-                                        <h4>Lista de tarefas</h4>
-                                    </div>
-                                    <div class="card-item row">
-                                        <div class="row">
-                                            <div class="col-md-8 offset-md-2">
-                                                <form id="todo-form">
-                                                    <div class="form-group"><input type="text" class="form-control"
-                                                            placeholder="Crie uma nova tarefa" id="task">
-                                                    </div>
-                                                    <button type="submit" class="btn btn-primary mt-3 ms-auto"
-                                                        style="font-family: 'Open Sans';">Adicionar tarefa</button>
-                                                </form>
-                                            </div>
+
+ <div class="principal card shadow pb-5 p-1 mb-5 rounded h-100 d-flex">
+            <div class="card-title d-flex justify-content-between align-items-center px-3">
+                <h3>Dashboard</h3>
+                <i class="fa-solid fa-x fa-lg"></i>
+            </div>
+            <div class="row mb-2">
+                <div class="col-12">
+                    <div class="row g-0 flex-md-row">
+                        <div class="col d-flex flex-column position-static" style="margin-right: 2.5%; margin-left: 1%;">
+                            <div class="card-body shadow p-1 mb-5  rounded bg-white">
+                                <div class="card-title d-flex justify-content-between align-items-center px-3">
+                                    <h4>Lista de tarefas</h4>
+                                </div>
+                                <div class="card-item row">
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2">
+                                            <form id="todo-form">
+                                                <div class="form-group"><input type="text" class="form-control"
+                                                        placeholder="Crie uma nova tarefa" id="task">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary mt-3 ms-auto"
+                                                    style="font-family: 'Open Sans';">Adicionar tarefa</button>
+                                            </form>
                                         </div>
-                                        <div class="row mt-5" style="font-family: 'Open Sans';">
-                                            <div class="col-md-8 offset-md-2" style="font-family: 'Open Sans';">
-                                                <ul id="todo-list" class="list-group"></ul>
-                                            </div>
+                                    </div>
+                                    <div class="row mt-5" style="font-family: 'Open Sans';">
+                                        <div class="col-md-8 offset-md-2" style="font-family: 'Open Sans';">
+                                            <ul id="todo-list" class="list-group"></ul>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-                            <div class="col-md-4">
-                                <div class="row g-0 flex-md-row" style="margin-right: 2.5%;">
-                                    <div class="card-body shadow p-3 mb-5 bg-white rounded">
-                                        <div class="card-title d-flex justify-content-between align-items-center px-3">
-                                            <h4>Dados diversos</h4>
-                                            <div class="row offset-md-4"><i class="fa-solid fa-bell fa-xl"></i></div>
-                                        </div>
-                                        <div class="card-items" id="dados-card">
 
-                                        </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row g-0 flex-md-row" style="margin-right: 2.5%;">
+                                <div class="card-body shadow p-3 mb-5 bg-white rounded">
+                                    <div class="card-title d-flex justify-content-between align-items-center px-3">
+                                        <h4>Dados diversos</h4>
+                                        <div class="row offset-md-4"><i class="fa-solid fa-bell fa-xl"></i></div>
+                                    </div>
+                                    <div class="card-items" id="dados-card">
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                 </div>
-                <div class="wrapper container-fluid">
-                    <div class="card-body shadow p-3 mb-5 rounded bg-white">
-                        <div class="card-title d-flex justify-content-between align-items-center px-3">
-                            <h4>Seus gastos</h4>
-                        </div>
-                        <div class="card-body">
-                            <canvas class="chart-container w-100" id="expensesIncomingsChart"
-                                style="height: 20vw;"></canvas>
-                        </div>
+
+            </div>
+            <div class="wrapper container-fluid" id="gastos">
+                <div class="card-body shadow p-3 mb-5 rounded bg-white">
+                    <div class="card-title d-flex justify-content-between align-items-center px-3">
+                        <h4>Seus gastos</h4>
+                    </div>
+                    <div class="gastos card-body">
+                        <canvas class="chart-container w-100" id="expensesIncomingsChart"
+                            style="height: 15vw;"></canvas>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="../assets/js/component/barra-roxa.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src="../assets/js/component/todolist-component.js"></script>
-        <script src="../assets/js/component/grafico-linhas-desp.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-            crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/113fc1b747.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/component/barra-roxa.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="../assets/js/component/todolist-component.js"></script>
+    <script src="../assets/js/component/grafico-linhas-desp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/113fc1b747.js" crossorigin="anonymous"></script>
 
 
 
 
-        <script>
+    <script>
 
-            let tasks = [];
+        let tasks = [];
 
-            const todoForm = document.getElementById('todo-form');
-            const taskInput = document.getElementById('task');
-            const todoList = document.getElementById('todo-list');
+        const todoForm = document.getElementById('todo-form');
+        const taskInput = document.getElementById('task');
+        const todoList = document.getElementById('todo-list');
 
-            todoForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                if (taskInput.value.trim() == '') {
-                    alert('Por favor, entre com uma tarefa!');
-                    return;
-                }
+        todoForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (taskInput.value.trim() == '') {
+                alert('Por favor, entre com uma tarefa!');
+                return;
+            }
 
-                const objTask = tasks.push({
-                    id: tasks.length + 1,
-                    task: taskInput.value.trim(),
-                    done: false,
-                });
-
-                taskInput.value = '';
-
-                displayTasks();
-                registerTask(objTask);
+            const objTask = tasks.push({
+                id: tasks.length + 1,
+                task: taskInput.value.trim(),
+                done: false,
             });
 
-            function displayTasks() {
-                todoList.innerHTML = '';
-                tasks.forEach(task => {
-                    const listItem = document.createElement('li');
-                    listItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+            taskInput.value = '';
 
-                    if (task.done) {
-                        listItem.classList.add("done");
-                    }
+            displayTasks();
+            registerTask(objTask);
+        });
 
-                    listItem.id = `task-${task.id}`;
-                    listItem.innerHTML = `<span>${task.task}</span>
+        function displayTasks() {
+            todoList.innerHTML = '';
+            tasks.forEach(task => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+
+                if (task.done) {
+                    listItem.classList.add("done");
+                }
+
+                listItem.id = `task-${task.id}`;
+                listItem.innerHTML = `<span>${task.task}</span>
                     <hr>
                     <div>
                         <button class="btn btn-success btn-sm w-100" onclick="toggleDone(${task.id})" style="height: 2rem; width= 12rem;">Marcar como feita</button>
@@ -238,66 +235,66 @@
                         <button class="btn btn-danger btn-sm w-100" onclick="deleteTask(${task.id})" style="height: 2rem; width= 12rem;">Deletar tarefa</button>
                     </div>`;
 
-                    todoList.appendChild(listItem);
-                });
-            }
+                todoList.appendChild(listItem);
+            });
+        }
 
-            function toggleDone(id) {
-                const task = tasks.find(task => task.id == id);
-                if (task) {
-                    task.done = !task.done;
-                    displayTasks();
-                }
-            }
-
-            function deleteTask(id) {
-                tasks = tasks.filter(task => task.id !== id);
+        function toggleDone(id) {
+            const task = tasks.find(task => task.id == id);
+            if (task) {
+                task.done = !task.done;
                 displayTasks();
             }
-        </script>
+        }
 
-        <script>
-            // Supondo que você tenha algum código para controlar a abertura/fechamento da sidebar
-            const sidebar = document.querySelector('.sidebar');
-            const pushedContent = document.querySelector('.pushed-content');
+        function deleteTask(id) {
+            tasks = tasks.filter(task => task.id !== id);
+            displayTasks();
+        }
+    </script>
 
-            function toggleSidebar() {
-                sidebar.classList.toggle('sidebar-open');
-                pushedContent.classList.toggle('pushed-content-open');
-            }
+    <script>
+        // Supondo que você tenha algum código para controlar a abertura/fechamento da sidebar
+        const sidebar = document.querySelector('.sidebar');
+        const pushedContent = document.querySelector('.pushed-content');
 
-            function adjustChartHeight() {
-                const chartContainer = document.querySelector('.chart-container');
-                chartContainer.style.height = `${window.innerHeight * 0.5}px`;
-            }
+        function toggleSidebar() {
+            sidebar.classList.toggle('sidebar-open');
+            pushedContent.classList.toggle('pushed-content-open');
+        }
 
-            // Atualiza a altura do contêiner quando a janela é redimensionada
-            window.addEventListener('resize', adjustChartHeight);
+        function adjustChartHeight() {
+            const chartContainer = document.querySelector('.chart-container');
+            chartContainer.style.height = `${window.innerHeight * 0.5}px`;
+        }
 
-            // Inicializa a altura do gráfico
-            adjustChartHeight();
-        </script>
+        // Atualiza a altura do contêiner quando a janela é redimensionada
+        window.addEventListener('resize', adjustChartHeight);
 
-        <script>
-            const valor = document.getElementById('valor');
+        // Inicializa a altura do gráfico
+        adjustChartHeight();
+    </script>
 
-            function fetchData() {
-                try {
-                    fetch('https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios')
-                        .then(response => response.json())
-                        .then(data => {
-                            return data.map(user => {
-                                console.log(user.incomings.salario);
-                                return user.incomings.salario;
-                            })
+    <script>
+        const valor = document.getElementById('valor');
+
+        function fetchData() {
+            try {
+                fetch('https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios')
+                    .then(response => response.json())
+                    .then(data => {
+                        return data.map(user => {
+                            console.log(user.incomings.salario);
+                            return user.incomings.salario;
                         })
+                    })
 
-                } catch (error) {
-                    console.log(error)
-                }
-                valor.innerHTML = fetchData();
+            } catch (error) {
+                console.log(error)
             }
-        </script>
+            valor.innerHTML = fetchData();
+        }
+    </script>
 
 </body>
 
