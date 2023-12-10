@@ -52,8 +52,9 @@ async function login(username, password) {
 
 
 function logout() {
+    console.log("logout")
     sessionStorage.removeItem("usuarioAtual");
-    window.location = 'index.html';
+    window.location = '../../index.html';
 }
 
 
