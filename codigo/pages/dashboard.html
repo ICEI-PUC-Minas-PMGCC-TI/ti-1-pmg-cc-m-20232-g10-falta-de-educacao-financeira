@@ -4,11 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="../assets/css/stylecardbarraroxa.css">
-    <link rel="stylesheet" href="../assets/css/sidenav.css">
-    <link rel="stylesheet" href="../assets/css/pagecontenthub.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
     <!-- Fontes de Texto -->
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
@@ -27,21 +22,27 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <!-- Fim dos Scripts -->
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link rel="stylesheet" href="../assets/css/stylecardbarraroxa.css">
+    <link rel="stylesheet" href="../assets/css/pagecontenthub.css">
+    <link rel="stylesheet" href="../assets/css/sidenav.css">
+
+    <title>Dashboard</title>
 </head>
 
 <body>
+
     <aside>
         <div id="sidebar" class="sidebar d-flex flex-column flex-shrink-0 h-100 " onmouseover="toggleSidebar()"
             onmouseout="toggleSidebar()">
             <ul class="nav nav-pills nav-flush flex-column  mb-auto text-center ">
                 <li id="inicio" class="selected">
-                    <a href="#" class="nav-link py-3 rounded-0" aria-current="page" data-bs-toggle="tooltip"
-                        data-bs-placement="right"><i class="material-icons fa-solid fa-home fa-xl mx-2"></i><span
-                            class="txt">Inicio</span></a>
+                    <a href="./dashboard.html" class="nav-link py-3 rounded-0" aria-current="page"
+                        data-bs-toggle="tooltip" data-bs-placement="right"><i
+                            class="material-icons fa-solid fa-home fa-xl mx-2"></i><span class="txt">Inicio</span></a>
                 </li>
                 <li id="content-hub">
-                    <a href="#" class="nav-link " aria-current="page" data-bs-toggle="tooltip"
+                    <a href="./contenthub.html" class="nav-link " aria-current="page" data-bs-toggle="tooltip"
                         data-bs-placement="right"><i class="material-icons fa-solid fa-book-open fa-xl mx-2"></i><span
                             class="txt">Content
                             Hub</span></a>
@@ -72,23 +73,24 @@
                     </div>
                 </a>
                 <ul class="dropdown-menu text-small">
-                    <li><a href="#" class="dropdown-item text-dark">Perfil</a></li>
-                    <li><a href="#" class="dropdown-item text-dark">Configuracoes</a></li>
+                    <li><a href="" class="dropdown-item text-dark">Perfil</a></li>
+                    <li><a href="" class="dropdown-item text-dark">Configuracoes</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a href="#" class="dropdown-item text-dark">Sair</a></li>
+                    <li><a href="" class="dropdown-item text-dark">Sair</a></li>
                 </ul>
             </div>
         </div>
 
     </aside>
 
-    <main class="container-fluid flex-grow-1">
-        <header class="container-fluid">
+    <div class="pushed-content container-fluid h-100 mb-4 mt-3 px-4">
+        <header class="mb-3">
             <div class="row">
-                <div class="col-lg-8">
-                    <h2 class="text-secondary m-3">Seja bem-vindo, <span id="username" class="fw-bold"></span>!</h2>
+                <div class="col-lg-8 Ola">
+                    <h2 class="text-secondary m-3 ">Seja bem-vindo, <span id="username" class="fw-bold"></span>!
+                    </h2>
                 </div>
                 <div class="col-lg-4 d-flex align-items-center justify-content-end g-2">
                     <div class="d-flex rounded-5 shadow py-3 px-4 mr-3 div-search">
@@ -97,85 +99,69 @@
                     </div>
                 </div>
             </div>
-            <hr class="style12">
         </header>
-    </main>
-    
-    <div style="width: 100%; height: 100%; position: relative; margin-left: 15vh; margin-top: 10vh;">
-        <div id="fundo-do-card"></div>
-        <div id="posicao-barras">
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="domingo"></div>
-                  </div>
-               
-            </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="segunda"></div>
-                </div>
-            </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="terca"></div>
-                </div>
-            </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="quarta"></div>
-                </div>
-            </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="quinta"></div>
-                </div>
-            </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="sexta"></div>
-                </div>
-            </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="sabado"></div>
-                </div>
-            </div>
-        </div>
-        <div id="posicao-esquerda">
-            <div id="fluxo-de-gastos-semanal" style="font-family: 'Open Sans';">Fluxo de gastos semanal</div>
-            <div id="valor"></div>
-        </div>
-    </div></div>
-        
 
-    <div id="melancia" style="width: 50%; margin: auto; position: absolute;">
-        <canvas id="expensesIncomingsChart" style=" background: #FAFAFA; box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.06); border-radius: 4px; margin-right: 10vh;" width="400" height="400";></canvas>
-    </div>
 
-    <div class="container">
-        <div class="row align-items-end">
-            <div id="abacate" class="container-fluid col col-lg-6 py-3 " style="font-family: 'Open Sans';margin-right: 10vh;">
-                <div class="card">
-                    <div class="card-body" style="font-family: 'Open Sans';">
-                        <h5 class="card-title"></h5>
-                        <div class="container" style="font-family: 'Open Sans';">
-                            <h1 class="text-center mt-5" >Lista de Tarefas</h1>
-                            <div class="row" >
-                                <div class="col-md-8 offset-md-2">
-                                    <form id="todo-form">
-                                        <div class="form-group"><input type="text" class="form-control"
-                                            placeholder="Crie uma nova tarefa" id="task">
+ <div class="principal card shadow pb-5 p-1 mb-5 rounded h-100 d-flex">
+            <div class="card-title d-flex justify-content-between align-items-center px-3">
+                <h3>Dashboard</h3>
+                <i class="fa-solid fa-x fa-lg"></i>
+            </div>
+            <div class="row mb-2">
+                <div class="col-12">
+                    <div class="row g-0 flex-md-row">
+                        <div class="col d-flex flex-column position-static" style="margin-right: 2.5%; margin-left: 1%;">
+                            <div class="card-body shadow p-1 mb-5  rounded bg-white">
+                                <div class="card-title d-flex justify-content-between align-items-center px-3">
+                                    <h4>Lista de tarefas</h4>
+                                </div>
+                                <div class="card-item row">
+                                    <div class="row">
+                                        <div class="col-md-8 offset-md-2">
+                                            <form id="todo-form">
+                                                <div class="form-group"><input type="text" class="form-control"
+                                                        placeholder="Crie uma nova tarefa" id="task">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary mt-3 ms-auto"
+                                                    style="font-family: 'Open Sans';">Adicionar tarefa</button>
+                                            </form>
                                         </div>
-                                        <button type="submit" class="btn btn-primary mt-3 ms-auto" style="font-family: 'Open Sans';">Adicionar tarefa</button>
-                                    </form>
+                                    </div>
+                                    <div class="row mt-5" style="font-family: 'Open Sans';">
+                                        <div class="col-md-8 offset-md-2" style="font-family: 'Open Sans';">
+                                            <ul id="todo-list" class="list-group"></ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row mt-5" style="font-family: 'Open Sans';">
-                                <div class="col-md-8 offset-md-2" style="font-family: 'Open Sans';">
-                                    <ul id="todo-list" class="list-group"></ul>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="row g-0 flex-md-row" style="margin-right: 2.5%;">
+                                <div class="card-body shadow p-3 mb-5 bg-white rounded">
+                                    <div class="card-title d-flex justify-content-between align-items-center px-3">
+                                        <h4>Dados diversos</h4>
+                                        <div class="row offset-md-4"><i class="fa-solid fa-bell fa-xl"></i></div>
+                                    </div>
+                                    <div class="card-items" id="dados-card">
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="wrapper container-fluid" id="gastos">
+                <div class="card-body shadow p-3 mb-5 rounded bg-white">
+                    <div class="card-title d-flex justify-content-between align-items-center px-3">
+                        <h4>Seus gastos</h4>
+                    </div>
+                    <div class="gastos card-body">
+                        <canvas class="chart-container w-100" id="expensesIncomingsChart"
+                            style="height: 15vw;"></canvas>
                     </div>
                 </div>
             </div>
@@ -199,7 +185,11 @@
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/113fc1b747.js" crossorigin="anonymous"></script>
 
+
+
+
     <script>
+
         let tasks = [];
 
         const todoForm = document.getElementById('todo-form');
@@ -260,6 +250,49 @@
         function deleteTask(id) {
             tasks = tasks.filter(task => task.id !== id);
             displayTasks();
+        }
+    </script>
+
+    <script>
+        // Supondo que você tenha algum código para controlar a abertura/fechamento da sidebar
+        const sidebar = document.querySelector('.sidebar');
+        const pushedContent = document.querySelector('.pushed-content');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('sidebar-open');
+            pushedContent.classList.toggle('pushed-content-open');
+        }
+
+        function adjustChartHeight() {
+            const chartContainer = document.querySelector('.chart-container');
+            chartContainer.style.height = `${window.innerHeight * 0.5}px`;
+        }
+
+        // Atualiza a altura do contêiner quando a janela é redimensionada
+        window.addEventListener('resize', adjustChartHeight);
+
+        // Inicializa a altura do gráfico
+        adjustChartHeight();
+    </script>
+
+    <script>
+        const valor = document.getElementById('valor');
+
+        function fetchData() {
+            try {
+                fetch('https://jsonserver-proknow.joopaulopaulo33.repl.co/usuarios')
+                    .then(response => response.json())
+                    .then(data => {
+                        return data.map(user => {
+                            console.log(user.incomings.salario);
+                            return user.incomings.salario;
+                        })
+                    })
+
+            } catch (error) {
+                console.log(error)
+            }
+            valor.innerHTML = fetchData();
         }
     </script>
 

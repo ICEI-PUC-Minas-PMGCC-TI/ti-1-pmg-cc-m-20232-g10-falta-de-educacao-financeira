@@ -71,7 +71,7 @@ html {
 .sidebar {
     height: 100%;
     width: 85px;
-
+    
     z-index: 1;
     top: 0;
     left: 0;
@@ -197,7 +197,7 @@ main .sidebar {
 /* Adicione estas regras CSS */
 
 .dropdown {
-    position: fixed;
+    
     bottom: 0;
     z-index: 1000; /* Um valor alto para garantir que esteja acima da barra lateral */
     
