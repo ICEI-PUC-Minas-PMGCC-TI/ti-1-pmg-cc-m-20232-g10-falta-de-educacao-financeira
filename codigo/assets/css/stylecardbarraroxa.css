@@ -2,10 +2,9 @@
 main {
     min-height: -webkit-fill-available;
     max-height: 100vh;
+   
 }
-html {
-    font-family: 'Open Sans';font-size: 22px;
-}
+
 
 #fluxo-de-gastos-semanal {
     color: rgba(0, 0, 0, 0.79);
@@ -191,3 +190,20 @@ html {
 .div-search .input-search:focus {
     outline: 0;
 }
+
+#sidebar{
+    position: fixed;
+}
+
+.pushed-content {
+    margin-left: 100px;
+ }
+
+ .pushed-content {
+    transition: margin-left 0.3s ease; /* Adiciona uma transição suave */
+ }
+ 
+ .pushed-content-open {
+    margin-left: 300px;
+ }
+ 

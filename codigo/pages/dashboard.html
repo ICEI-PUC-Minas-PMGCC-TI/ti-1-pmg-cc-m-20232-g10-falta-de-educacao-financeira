@@ -5,11 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="../assets/css/stylecardbarraroxa.css">
-    <link rel="stylesheet" href="../assets/css/sidenav.css">
-    <link rel="stylesheet" href="../assets/css/pagecontenthub.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
+    
     <!-- Fontes de Texto -->
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
@@ -27,6 +23,13 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <!-- Fim dos Scripts -->
+
+   
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link rel="stylesheet" href="../assets/css/stylecardbarraroxa.css">
+    <link rel="stylesheet" href="../assets/css/pagecontenthub.css">
+    <link rel="stylesheet" href="../assets/css/sidenav.css">
     <title>Document</title>
 </head>
 
@@ -36,12 +39,12 @@
             onmouseout="toggleSidebar()">
             <ul class="nav nav-pills nav-flush flex-column  mb-auto text-center ">
                 <li id="inicio" class="selected">
-                    <a href="#" class="nav-link py-3 rounded-0" aria-current="page" data-bs-toggle="tooltip"
+                    <a href="./dashboard.html" class="nav-link py-3 rounded-0" aria-current="page" data-bs-toggle="tooltip"
                         data-bs-placement="right"><i class="material-icons fa-solid fa-home fa-xl mx-2"></i><span
                             class="txt">Inicio</span></a>
                 </li>
                 <li id="content-hub">
-                    <a href="#" class="nav-link " aria-current="page" data-bs-toggle="tooltip"
+                    <a href="./contenthub.html" class="nav-link " aria-current="page" data-bs-toggle="tooltip"
                         data-bs-placement="right"><i class="material-icons fa-solid fa-book-open fa-xl mx-2"></i><span
                             class="txt">Content
                             Hub</span></a>
@@ -72,23 +75,23 @@
                     </div>
                 </a>
                 <ul class="dropdown-menu text-small">
-                    <li><a href="#" class="dropdown-item text-dark">Perfil</a></li>
-                    <li><a href="#" class="dropdown-item text-dark">Configuracoes</a></li>
+                    <li><a href="" class="dropdown-item text-dark">Perfil</a></li>
+                    <li><a href="" class="dropdown-item text-dark">Configuracoes</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a href="#" class="dropdown-item text-dark">Sair</a></li>
+                    <li><a href="" class="dropdown-item text-dark">Sair</a></li>
                 </ul>
             </div>
         </div>
 
     </aside>
 
-    <main class="container-fluid flex-grow-1">
+    <main class="container-fluid flex-grow-1 pushed-content">
         <header class="container-fluid">
             <div class="row">
-                <div class="col-lg-8">
-                    <h2 class="text-secondary m-3">Seja bem-vindo, <span id="username" class="fw-bold"></span>!</h2>
+                <div class="col-lg-8 Ola">
+                    <h2 class="text-secondary m-3 ">Seja bem-vindo, <span id="username" class="fw-bold"></span>!</h2>
                 </div>
                 <div class="col-lg-4 d-flex align-items-center justify-content-end g-2">
                     <div class="d-flex rounded-5 shadow py-3 px-4 mr-3 div-search">
@@ -99,79 +102,85 @@
             </div>
             <hr class="style12">
         </header>
-    </main>
-    
-    <div style="width: 100%; height: 100%; position: relative; margin-left: 15vh; margin-top: 10vh;">
-        <div id="fundo-do-card"></div>
-        <div id="posicao-barras">
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="domingo"></div>
-                  </div>
-               
-            </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="segunda"></div>
+
+        <div style="display: flex; gap: 20px">
+            <div style="width: 200%; height: 100%; position: relative; margin-left: 15vh; margin-top: 10vh;">
+                <div id="fundo-do-card"></div>
+                <div id="posicao-barras">
+                    <div class="espacamento-barra">
+                        <div class="barra-cinza">
+                            <div class="barra-roxa" id="domingo"></div>
+                        </div>
+                    
+                    </div>
+                    <div class="espacamento-barra">
+                        <div class="barra-cinza">
+                            <div class="barra-roxa" id="segunda"></div>
+                        </div>
+                    </div>
+                    <div class="espacamento-barra">
+                        <div class="barra-cinza">
+                            <div class="barra-roxa" id="terca"></div>
+                        </div>
+                    </div>
+                    <div class="espacamento-barra">
+                        <div class="barra-cinza">
+                            <div class="barra-roxa" id="quarta"></div>
+                        </div>
+                    </div>
+                    <div class="espacamento-barra">
+                        <div class="barra-cinza">
+                            <div class="barra-roxa" id="quinta"></div>
+                        </div>
+                    </div>
+                    <div class="espacamento-barra">
+                        <div class="barra-cinza">
+                            <div class="barra-roxa" id="sexta"></div>
+                        </div>
+                    </div>
+                    <div class="espacamento-barra">
+                        <div class="barra-cinza">
+                            <div class="barra-roxa" id="sabado"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="posicao-esquerda">
+                    <div id="fluxo-de-gastos-semanal" style="font-family: 'Open Sans';">Fluxo de gastos semanal</div>
+                    <div id="valor"></div>
                 </div>
             </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="terca"></div>
-                </div>
-            </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="quarta"></div>
-                </div>
-            </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="quinta"></div>
-                </div>
-            </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="sexta"></div>
-                </div>
-            </div>
-            <div class="espacamento-barra">
-                <div class="barra-cinza">
-                    <div class="barra-roxa" id="sabado"></div>
-                </div>
+        
+            
+            
+            <div id="melancia" style="width: 200%; margin: auto; margin-right: 50px; position: relative;">
+                <canvas id="expensesIncomingsChart" style="background: #FAFAFA; box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.06); border-radius: 4px;" width="400" height="200"></canvas>
             </div>
         </div>
-        <div id="posicao-esquerda">
-            <div id="fluxo-de-gastos-semanal" style="font-family: 'Open Sans';">Fluxo de gastos semanal</div>
-            <div id="valor"></div>
-        </div>
-    </div>
-
-    <div id="melancia" style="width: 50%; margin: auto; position: absolute;">
-        <canvas id="expensesIncomingsChart" style=" background: #FAFAFA; box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.06); border-radius: 4px; margin-right: 10vh;" width="400" height="200";></canvas>
-    </div>
-
-    <div class="container">
-        <div class="row align-items-end">
-            <div id="abacate" class="container-fluid col col-lg-6 py-3 " style="font-family: 'Open Sans';margin-right: 10vh;">
-                <div class="card">
-                    <div class="card-body" style="font-family: 'Open Sans';">
-                        <h5 class="card-title"></h5>
-                        <div class="container" style="font-family: 'Open Sans';">
-                            <h1 class="text-center mt-5" >Lista de Tarefas</h1>
-                            <div class="row" >
-                                <div class="col-md-8 offset-md-2">
-                                    <form id="todo-form">
-                                        <div class="form-group"><input type="text" class="form-control"
-                                            placeholder="Crie uma nova tarefa" id="task">
+        
+        <div style="display: flex; gap: 20px">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div id="abacate" class="container-fluid col col-lg-6 py-3 " style="font-family: 'Open Sans';margin-right: 10vh; ">
+                        <div class="card">
+                            <div class="card-body" style="font-family: 'Open Sans';">
+                                <h5 class="card-title"></h5>
+                                <div class="container" style="font-family: 'Open Sans';">
+                                    <h1 class="text-center mt-5" >Lista de Tarefas</h1>
+                                    <div class="row" >
+                                        <div class="col-md-8 offset-md-2">
+                                            <form id="todo-form">
+                                                <div class="form-group"><input type="text" class="form-control"
+                                                    placeholder="Crie uma nova tarefa" id="task">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary mt-3 ms-auto" style="font-family: 'Open Sans';">Adicionar tarefa</button>
+                                            </form>
                                         </div>
-                                        <button type="submit" class="btn btn-primary mt-3 ms-auto" style="font-family: 'Open Sans';">Adicionar tarefa</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="row mt-5" style="font-family: 'Open Sans';">
-                                <div class="col-md-8 offset-md-2" style="font-family: 'Open Sans';">
-                                    <ul id="todo-list" class="list-group"></ul>
+                                    </div>
+                                    <div class="row mt-5" style="font-family: 'Open Sans';">
+                                        <div class="col-md-8 offset-md-2" style="font-family: 'Open Sans';">
+                                            <ul id="todo-list" class="list-group"></ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -179,7 +188,17 @@
                 </div>
             </div>
         </div>
-    </div>
+
+    </main>
+    
+   
+
+    
+        
+     
+     
+  
+
 
     <script src="../assets/js/component/barra-roxa.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -198,7 +217,11 @@
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/113fc1b747.js" crossorigin="anonymous"></script>
 
+
+    
+
     <script>
+
         let tasks = [];
 
         const todoForm = document.getElementById('todo-form');
@@ -261,6 +284,19 @@
             displayTasks();
         }
     </script>
+
+    <script>
+     // Supondo que você tenha algum código para controlar a abertura/fechamento da sidebar
+const sidebar = document.querySelector('.sidebar');
+const pushedContent = document.querySelector('.pushed-content');
+
+function toggleSidebar() {
+   sidebar.classList.toggle('sidebar-open');
+   pushedContent.classList.toggle('pushed-content-open');
+}
+    </script>
+
+    
 
 </body>
 
