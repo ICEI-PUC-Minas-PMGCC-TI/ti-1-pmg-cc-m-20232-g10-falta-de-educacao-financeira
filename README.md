@@ -1,19 +1,20 @@
-# Nome do projeto
-
-Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
+PROKNOW Alternativas
+A PROKNOW nasceu da necessidade de transformar a vida de pessoas comuns. Por isso, nossa jornada é auxiliar no trajeto de nossos usuarios. Contamos com uma interface simples e intuitiva. Buscando trazer informacoes tratadas e analises precisas para facilitar a busca da tao sonhada liberadde financeira.
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Joao Paulo Dias Estevao
+* Victor Souza Lima
+* Bernardo Ladeira Kartabil
+* Joao Matheus
+* Gustavo Henrique Rodrigues de Castro
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Rommel Carneiro
+* Ilo Rivero
+* Joao Carlos Caetano
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+O usuario deve fazer cadastro na pagina inicial e cadastrar as informacoes solicitadas, apos isso, ele tera acesso ao Web App
