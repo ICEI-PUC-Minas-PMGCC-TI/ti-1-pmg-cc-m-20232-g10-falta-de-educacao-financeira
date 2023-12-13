@@ -1,31 +1,38 @@
 <<<<<<< HEAD
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: PROKNOW: Alternativas
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: Dias Estevão
+    given-names: João Paulo
+  - family-names: Souza Lima
+    given-names: Victor 
+  - family-names: Ladeira Kartabil
+    given-names: Bernardo
+  - family-names: Henrique de Castro
+    given-names: Gustavo
+  - family-names: Gomes Sales Barbosa
+    given-names: João Matheus
   - family-names: 
     given-names:
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Carneiro
+    given-names: Rommel
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Rivero
+    given-names: Ilo
+- name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Caetano
+    given-names: Joao Carlos
 keywords:
-  - 
-  - 
+  - financeiro
+  - saude financeira
+  - dashboard
+  - webapp
+  - gamefication
 repository-code: 
 license: CC-BY-4.0
 version: 1.0.0
@@ -58,8 +65,8 @@ authors:
 keywords:
   - 
   - 
-repository-code: 
+repository-code: https://github.com/ICEI-PUC-Minas-PMGCC-TI/ti-1-pmg-cc-m-20232-g10-falta-de-educacao-financeira
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
+date-released: 2023-12-23
 >>>>>>> 576e4073eb686b7caee5801aac8f95491eb4d605
